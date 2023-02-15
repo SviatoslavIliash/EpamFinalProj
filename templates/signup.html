@@ -4,16 +4,29 @@
 Sign up page
 {% endblock%}
 {% block body %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <p style="color:red; font-size:200%;">{{ message }}</p>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}<br>
+
 <div class="container mt-5">
     <h1>Sign up</h1>
     <form method="post">
         <label for="login" class="form-label">User name</label>
         <input type="text" name="login" id="login" class="form-control" placeholder="Enter user name"><br>
         <label for="password" class="form-label">Password</label>
-        <input type="text" name="password" id="password" class="form-control" placeholder="Enter password"><br>
-        <label for="password" class="form-label">Email</label>
-        <input type="text" name="email" id="email" class="form-control" placeholder="name@example.com"><br>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Enter password"><br>
+        <label for="password2" class="form-label">Password2</label>
+        <input type="password" name="password2" id="password2" class="form-control" placeholder="Enter password2"><br>
+        <label for="login" class="form-label">Email</label>
+        <input type="email" name="email" id="email" class="form-control" placeholder="name@example.com"><br>
         <input type="submit" class="btn btn-success" value="Sign up"><br>
     </form>
-</div>
+</div><br>
+
 {% endblock %}
