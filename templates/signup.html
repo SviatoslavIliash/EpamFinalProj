@@ -3,7 +3,13 @@
 {% block title%}
 Sign up page
 {% endblock%}
+
+{% block nav%}
+<a class="nav-link fw-bold py-1 px-2" href="/login">Log in </a>
+{% endblock%}
+
 {% block body %}
+
 {% with messages = get_flashed_messages() %}
   {% if messages %}
     <ul class=flashes>

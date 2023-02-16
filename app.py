@@ -27,6 +27,8 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return '<User %r>' % self.login
 
+    def get_id(self):
+        return self.login
 
 class Service(db.Model):
     #id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -54,9 +56,9 @@ class OrderItem(db.Model):
     price = db.Column(db.Integer, nullable=False)
 
 
-@login_manager.user_loader
+@manager.user_loader
 def load_user(user_id):
-    return User.get(user_id)
+    return User.query.get(user_id)
 
 
 with app.app_context():
@@ -81,8 +83,10 @@ def login():
             if user and check_password_hash(user.password, password):
                 login_user(user)
 
-                next_page = request.args.get('/user/<string:{name}>'.format(name=login))
-
+                #next_page = request.form.get('/user/<string:login>')
+                next_page = f'user_account/{login}'
+                if login == 'admin':
+                    return redirect('/admin_account')
                 return redirect(next_page)
             else:
                 flash('Login or password is not correct')
@@ -114,10 +118,18 @@ def signup():
     return render_template("signup.html")
 
 
-@app.route('/user_account/<string:name>')
+@app.route('/user_account/<string:name>', methods=['GET', 'POST'])
 def user(name):
-    return render_template('user_account.html')
+    if request.form.get('wash'):
+        pass
 
+    return render_template('user_account.html', name=name)
+
+
+@app.route('/admin_account', methods=['GET', 'POST'])
+def admin():
+
+    return render_template('admin.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -4,6 +4,27 @@
 User Account
 {% endblock%}
 
+{%block nav%}<a class="nav-link fw-bold py-1 px-2" href="/">Log out</a>{% endblock %}
+
 {% block body%}
-Hello
+<h1 style="font-size:200%">Welcome, {{name}}</h1><br>
+<p>Choose service for you two-wheeled friend:</p>
+
+<form style="text-align: left;" method="post" saction="/action_page.php">
+  <input type="checkbox" id="service1" name="wash" value="wash">
+  <label for="service1"> Wash</label><br>
+  <input type="checkbox" id="service2" name="repair" value="repair">
+  <label for="service2"> Repair</label><br>
+  <input type="checkbox" id="service3" name="upgrade" value="upgrade">
+  <label for="service3"> Upgrade</label><br>
+  <input type="checkbox" id="service4" name="lube_chain" value="Lube_chain">
+  <label for="service4"> Lube chain</label><br><br>
+  <input type="submit" value="Submit" class="btn btn-success">
+</form>
+
+<form method="get">
+<label for="orders" class="textarea-label">Your orders</label><br>
+<textarea style="" id="orders"></textarea><br>
+</form>
+
 {% endblock%}
