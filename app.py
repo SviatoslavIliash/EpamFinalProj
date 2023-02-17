@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import login_user, LoginManager
+from flask_login import login_user, LoginManager, login_required, UserMixin, current_user, logout_user
 #from config import db_config
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -10,17 +10,22 @@ app.secret_key = 'some secret key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:2570947K!@localhost/bikerepair'
 app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False
 db = SQLAlchemy(app)
-manager = LoginManager()
-manager.init_app(app)
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
 
-from flask_login import UserMixin, login_manager
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
+
+#from flask_login import UserMixin, login_manager
 
 
 
 
 class User(db.Model, UserMixin):
-    #user_id = db.Column(db.Integer, autoincrement=True)
-    login = db.Column(db.String(50), primary_key=True, unique=True, nullable=False)
+    user_id = db.Column(db.Integer, primary_key=True)
+    login = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(100), nullable=False)
 
@@ -28,7 +33,7 @@ class User(db.Model, UserMixin):
         return '<User %r>' % self.login
 
     def get_id(self):
-        return self.login
+        return self.user_id
 
 class Service(db.Model):
     #id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -56,9 +61,7 @@ class OrderItem(db.Model):
     price = db.Column(db.Integer, nullable=False)
 
 
-@manager.user_loader
-def load_user(user_id):
-    return User.query.get(user_id)
+
 
 
 with app.app_context():
@@ -84,16 +87,24 @@ def login():
                 login_user(user)
 
                 #next_page = request.form.get('/user/<string:login>')
-                next_page = f'user_account/{login}'
+                next = f'user_account/{login}'
                 if login == 'admin':
-                    return redirect('/admin_account')
-                return redirect(next_page)
+                    next = '/admin_account'
+                return redirect(next)
             else:
                 flash('Login or password is not correct')
         else:
             flash('Please fill login and password fields')
 
     return render_template('login.html')
+
+
+@app.route('/logout', methods=['GET', 'POST'])
+@login_required
+def logout():
+    logout_user()
+    flash("You have been logged out, my friend!")
+    return redirect(url_for('login'))
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -119,17 +130,26 @@ def signup():
 
 
 @app.route('/user_account/<string:name>', methods=['GET', 'POST'])
+@login_required
 def user(name):
     if request.form.get('wash'):
         pass
-
-    return render_template('user_account.html', name=name)
+    if current_user.login == name:
+        return render_template('user_account.html', name=name)
+    else:
+        flash('Log in required!!!')
+        return redirect(url_for('login'))
 
 
 @app.route('/admin_account', methods=['GET', 'POST'])
+@login_required
 def admin():
+    if current_user.login == 'admin':
+        return render_template('admin.html')
+    else:
+        flash('Log in required!!!')
+        return redirect(url_for('login'))
 
-    return render_template('admin.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
