@@ -8,33 +8,33 @@ Application should provide:
 - Client can choose service and make order.
 - Sign up and login authentication for client or admin
 - Display client's orders for user or admin
-- Changing order`s status or delete order for admin
+- Changing order status or delete order for admin
 ___
 ## Main page
 Client can look at provided services
 
 *main scenario:*
 
-User choose "Log in" or "Sign up"
+User chooses "Log in" or "Sign up"
 
 ## Authentication
   
-User select "Sign up" or "Log in".
+User selects "Sign up" or "Log in".
 1. For "Log in" user fill  "login", "password" and click submit;
-- if entered data valid, then user redirects to "User page";
-- if entered data is not valid, error messages occurs.
-2. For "Sing up" user fill "login", "password", "email" and click submit;
-- if entered data valid, then user redirects to "Log in" page;
-- user will be added to database;
-- if entered data is not valid, error messages occurs.
+- if entered data is valid, then user is redirected to "User page";
+- if entered data is not valid, error message occurs.
+2. For "Sign up" user fills "login", "password", "email" and clicks submit;
+- if entered data is valid, then user is redirected to "Log in" page;
+- user is added to database;
+- if entered data is not valid, error message occurs.
 
 ## User page
 
 *main scenario:*
 
-1. User look at list of services and choose one or several options;
-2. User click "Submit" and order will be added to database;
-3. User can see list of his orders in the bottom.
+1. User looks at list of services and chooses one or several options;
+2. User clicks "Submit" and order will be added to the database;
+3. User can see the list of his orders in the bottom.
 
 ## Admin page
 

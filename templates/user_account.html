@@ -17,14 +17,20 @@ User Account
   <label for="service2"> Repair</label><br>
   <input type="checkbox" id="service3" name="upgrade" value="upgrade">
   <label for="service3"> Upgrade</label><br>
-  <input type="checkbox" id="service4" name="lube_chain" value="Lube_chain">
+  <input type="checkbox" id="service4" name="lube_chain" value="lube_chain">
   <label for="service4"> Lube chain</label><br><br>
   <input type="submit" value="Submit" class="btn btn-success">
 </form>
 
 <form method="get">
-<label for="orders" class="textarea-label">Your orders</label><br>
-<textarea style="" id="orders"></textarea><br>
+<div class="container">
+<div class="overflow-y:auto" >
+  {% for order in user_orders %}
+
+  {{ order }}<br>
+  {% endfor %}
+</div><br>
+</div>
 </form>
 
 {% endblock%}

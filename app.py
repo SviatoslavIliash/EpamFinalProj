@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, request, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
+from re import match
 from flask_login import login_user, LoginManager, login_required, UserMixin, current_user, logout_user
 #from config import db_config
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -40,9 +41,21 @@ class Service(db.Model):
     name = db.Column(db.String(50), primary_key=True, unique=True, nullable=False)
     price = db.Column(db.Integer, nullable=False)
 
+
+    @staticmethod
+    def default_table(current_db):
+        current_db.session.add_all([
+            Service(name='wash', price='50'),
+            Service(name='repair', price='100'),
+            Service(name='upgrade', price='150'),
+            Service(name='lube_chain', price='50')
+        ])
+        current_db.session.commit()
+
     def __repr__(self):
         return '<Service %r>' % self.servname
 
+### Filing Service table
 
 class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -61,12 +74,9 @@ class OrderItem(db.Model):
     price = db.Column(db.Integer, nullable=False)
 
 
-
-
-
 with app.app_context():
-
     db.create_all()
+    #Service.default_table(db)
 
 
 @app.route('/', methods=['GET'])
@@ -113,29 +123,53 @@ def signup():
     password = request.form.get('password')
     password2 = request.form.get('password2')
     email = request.form.get('email')
-
     if request.method == 'POST':
-        if not (login.strip() and password and password2 and email.strip()):
-            flash('Please, fill all fields!')
-        elif password != password2:
-            flash('Passwords are not equal!')
-        else:
-            hash_pwd = generate_password_hash(password)
-            new_user = User(login=login, password=hash_pwd, email=email)
-            db.session.add(new_user)
-            db.session.commit()
+        if User.query.filter_by(login=login).first():
+            flash('Such login exists. Choose another name!')
+            return render_template("signup.html")
+        if match(r"^[a-zA-Z0-9_]{3,40}$", login):
+            if not (login.strip() and password and password2 and email.strip()):
+                flash('Please, fill all fields!')
+            elif password != password2:
+                flash('Passwords are not equal!')
+            else:
+                hash_pwd = generate_password_hash(password)
+                new_user = User(login=login, password=hash_pwd, email=email)
+                db.session.add(new_user)
+                db.session.commit()
 
             return redirect(url_for('login'))
+        else:
+            flash('Login must be 3-40 length and contents only letters, numbers, underscore!')
     return render_template("signup.html")
 
 
 @app.route('/user_account/<string:name>', methods=['GET', 'POST'])
 @login_required
 def user(name):
-    if request.form.get('wash'):
-        pass
+    serv1 = request.form.get('wash')
+    serv2 = request.form.get('repair')
+    serv3 = request.form.get('upgrade')
+    serv4 = request.form.get('lube_chain')
+    services = [serv1, serv2, serv3, serv4]
+    if request.method == 'POST':
+        order = Order(login=name, status='pending')
+        db.session.add(order)
+        db.session.flush()
+        for service in services:
+            if service:
+                order_item = OrderItem(order_id=order.id, serv_name=service,
+                                    price=db.session.query(Service.price).filter(Service.name==service))
+                db.session.add(order_item)
+            db.session.commit()
+
+    user_orders = Order.query.filter_by(login=name)
+    order_list =[]
+    for i in user_orders:
+        order_list.append(i)
+
     if current_user.login == name:
-        return render_template('user_account.html', name=name)
+        return render_template('user_account.html', name=name, user_orders=order_list)
     else:
         flash('Log in required!!!')
         return redirect(url_for('login'))
