@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 from re import match
 from flask_login import login_user, LoginManager, login_required, UserMixin, current_user, logout_user
-#from config import db_config
+from sqlalchemy import func
 from werkzeug.security import check_password_hash, generate_password_hash
 
 
@@ -60,11 +60,11 @@ class Service(db.Model):
 class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     login = db.Column(db.String(50), db.ForeignKey('user.login'), nullable=False)
-    #servname = db.Column(db.String(100), nullable=False)
+    date = db.Column(db.DateTime, nullable=False, server_default=func.now())
     status = db.Column(db.String(50), nullable=False)
     services = ''
     total_price = 0
-   # date = ''
+
 
     def __repr__(self):
         return '<Order %r>' % self.id
@@ -151,7 +151,7 @@ def total_user_orders(name):
     total_orders = []
 
     for o in user_orders:
-        current_order = Order(id=o.id, status=o.status)
+        current_order = Order(id=o.id, status=o.status, date=o.date)
         order_items = OrderItem.query.filter_by(order_id=o.id)
         services = []
         for item in order_items:
@@ -160,6 +160,10 @@ def total_user_orders(name):
         current_order.services = ", ".join(services)
         total_orders.append(current_order)
     return total_orders
+
+def delete_order(id):
+    pass
+
 
 @app.route('/user_account/<string:name>', methods=['GET', 'POST'])
 @login_required

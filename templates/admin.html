@@ -29,15 +29,23 @@ Admin Account
         <th>Price</th>
         <th>Date</th>
         <th>Status</th>
+        <th>Delete Order</th>
+        <th>Confirmation</th>
     </thead>
 {% for order in total_user_orders(user.login) %}
-<tr>
+<tr><form>
   <td>{{ order.id }}</td>
   <td>{{ order.services }}</td>
   <td>{{ order.total_price }}</td>
-  <td>12.12.2022</td>
-  <td>{{ order.status }}</td>
-</tr>
+  <td>{{ order.date }}</td>
+  <td><select name="status" id="status">
+    <option value="{{order.status}}"><{{order.status}}></option>
+    <option value="in process">in process</option>
+    <option value="done">done</option>
+  </select></td>
+    <td><input type="checkbox" id="delete" name="delete" value="delete"></td>
+  <td><input type="submit" value="Confirm" class="btn btn-danger"></td>
+</form></tr>
 {% endfor %}
 </table>
 </div>
@@ -46,6 +54,7 @@ Admin Account
 </details>
 {% endfor %}
 <br><br><br>
+
 
 
 {% endblock%}
