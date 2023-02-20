@@ -8,9 +8,18 @@ User Account
 
 {% block body%}
 <h1 style="font-size:200%">Welcome, {{name}}</h1><br>
-<p>Choose service for you two-wheeled friend:</p>
+<p style="font-size:150%">Choose service for you two-wheeled friend:</p>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <p style="color:red; font-size:200%;">{{ message }}</p>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}<br>
 
-<form style="text-align: left;" method="post" saction="/action_page.php">
+<form style="text-align: left;" method="post" action="{{url_for('user', name=name)}}">
   <input type="checkbox" id="service1" name="wash" value="wash">
   <label for="service1"> Wash</label><br>
   <input type="checkbox" id="service2" name="repair" value="repair">
@@ -20,17 +29,40 @@ User Account
   <input type="checkbox" id="service4" name="lube_chain" value="lube_chain">
   <label for="service4"> Lube chain</label><br><br>
   <input type="submit" value="Submit" class="btn btn-success">
-</form>
+</form><br><br>
+<p style="font-size:150%">Your orders</p>
+<style>
+    .tableFixHead {overflow-y:auto; height: 300px; }
+    .tableFixHead thead th {position: sticky; top: 0; z-index: 1;}
 
-<form method="get">
+    th { background:#eee;}
+</style>
+
+<form method="get" action="/action_page.php">
 <div class="container">
-<div class="overflow-y:auto" >
-  {% for order in user_orders %}
-
-  {{ order }}<br>
-  {% endfor %}
-</div><br>
+<!---<div style="height:300px; overflow-y:scroll"> -->
+<div class="tableFixHead">
+<table style="width:100%">
+    <thead>
+        <th>Order id</th>
+        <th>Service</th>
+        <th>Price</th>
+        <th>Date</th>
+        <th>Status</th>
+    </thead>
+{% for order in user_orders %}
+<tr>
+  <td>{{ order.id }}</td>
+  <td>{{ order.services }}</td>
+  <td>{{ order.total_price }}</td>
+  <td>12.12.2022</td>
+  <td>{{ order.status }}</td>
+</tr>
+{% endfor %}
+</table>
 </div>
-</form>
+</div>
+</form><br><br><br>
+
 
 {% endblock%}

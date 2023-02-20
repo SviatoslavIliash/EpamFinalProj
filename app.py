@@ -62,7 +62,9 @@ class Order(db.Model):
     login = db.Column(db.String(50), db.ForeignKey('user.login'), nullable=False)
     #servname = db.Column(db.String(100), nullable=False)
     status = db.Column(db.String(50), nullable=False)
-
+    services = ''
+    total_price = 0
+   # date = ''
 
     def __repr__(self):
         return '<Order %r>' % self.id
@@ -97,7 +99,7 @@ def login():
                 login_user(user)
 
                 #next_page = request.form.get('/user/<string:login>')
-                next = f'user_account/{login}'
+                next = url_for('user', name=login)
                 if login == 'admin':
                     next = '/admin_account'
                 return redirect(next)
@@ -144,6 +146,21 @@ def signup():
     return render_template("signup.html")
 
 
+def total_user_orders(name):
+    user_orders = Order.query.filter_by(login=name)
+    total_orders = []
+
+    for o in user_orders:
+        current_order = Order(id=o.id, status=o.status)
+        order_items = OrderItem.query.filter_by(order_id=o.id)
+        services = []
+        for item in order_items:
+            services.append(item.serv_name)
+            current_order.total_price += int(item.price)
+        current_order.services = ", ".join(services)
+        total_orders.append(current_order)
+    return total_orders
+
 @app.route('/user_account/<string:name>', methods=['GET', 'POST'])
 @login_required
 def user(name):
@@ -153,23 +170,22 @@ def user(name):
     serv4 = request.form.get('lube_chain')
     services = [serv1, serv2, serv3, serv4]
     if request.method == 'POST':
-        order = Order(login=name, status='pending')
-        db.session.add(order)
-        db.session.flush()
-        for service in services:
-            if service:
-                order_item = OrderItem(order_id=order.id, serv_name=service,
-                                    price=db.session.query(Service.price).filter(Service.name==service))
-                db.session.add(order_item)
-            db.session.commit()
-
-    user_orders = Order.query.filter_by(login=name)
-    order_list =[]
-    for i in user_orders:
-        order_list.append(i)
+        if not(serv1 or serv2 or serv3 or serv4):
+            flash('Choose service!')
+            redirect(url_for('user', name=name))
+        else:
+            order = Order(login=name, status='pending')
+            db.session.add(order)
+            db.session.flush()
+            for service in services:
+                if service:
+                    order_item = OrderItem(order_id=order.id, serv_name=service,
+                                        price=db.session.query(Service.price).filter(Service.name==service))
+                    db.session.add(order_item)
+                db.session.commit()
 
     if current_user.login == name:
-        return render_template('user_account.html', name=name, user_orders=order_list)
+        return render_template('user_account.html', name=name, user_orders=total_user_orders(name))
     else:
         flash('Log in required!!!')
         return redirect(url_for('login'))
@@ -178,8 +194,10 @@ def user(name):
 @app.route('/admin_account', methods=['GET', 'POST'])
 @login_required
 def admin():
+    users = db.session.query(Order.login).distinct()
+
     if current_user.login == 'admin':
-        return render_template('admin.html')
+        return render_template('admin.html', users=users, total_user_orders=total_user_orders)
     else:
         flash('Log in required!!!')
         return redirect(url_for('login'))

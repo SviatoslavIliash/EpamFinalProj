@@ -9,10 +9,43 @@ Admin Account
 {% block body%}
     <h1 style="font-size:200%">Welcome, Admin</h1><br>
 
+{% for user in users %}
+<details>
+    <summary>{{user.login}}</summary>
+    <style>
+    .tableFixHead {overflow-y:auto; height: 200px; }
+    .tableFixHead thead th {position: sticky; top: 0; z-index: 1;}
 
-<form method="get">
-<label for="orders" class="textarea-label">Your orders</label><br>
-<textarea style="" id="orders"></textarea><br>
+    th { background:#eee;}
+</style>
+    <form method="get" action="/action_page.php">
+<div class="container">
+<!---<div style="height:300px; overflow-y:scroll"> -->
+<div class="tableFixHead">
+<table style="width:100%">
+    <thead>
+        <th>Order id</th>
+        <th>Service</th>
+        <th>Price</th>
+        <th>Date</th>
+        <th>Status</th>
+    </thead>
+{% for order in total_user_orders(user.login) %}
+<tr>
+  <td>{{ order.id }}</td>
+  <td>{{ order.services }}</td>
+  <td>{{ order.total_price }}</td>
+  <td>12.12.2022</td>
+  <td>{{ order.status }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</div>
 </form>
+</details>
+{% endfor %}
+<br><br><br>
+
 
 {% endblock%}
