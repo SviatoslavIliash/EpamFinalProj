@@ -1,9 +1,8 @@
-import enum
 from flask import Flask, render_template, url_for, request, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 from re import match
 from flask_login import login_user, LoginManager, login_required, UserMixin, current_user, logout_user
-from sqlalchemy import func, Enum
+from sqlalchemy import func, desc, and_
 from werkzeug.security import check_password_hash, generate_password_hash
 
 
@@ -15,6 +14,7 @@ db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
+
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -33,11 +33,10 @@ class User(db.Model, UserMixin):
     def get_id(self):
         return self.user_id
 
+
 class Service(db.Model):
-    #id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(50), primary_key=True, unique=True, nullable=False)
     price = db.Column(db.Integer, nullable=False)
-
 
     @staticmethod
     def default_table(current_db):
@@ -52,7 +51,6 @@ class Service(db.Model):
     def __repr__(self):
         return '<Service %r>' % self.servname
 
-### Filing Service table
 
 class Order(db.Model):
 
@@ -95,7 +93,6 @@ def login():
             if user and check_password_hash(user.password, password):
                 login_user(user)
 
-                #next_page = request.form.get('/user/<string:login>')
                 next = url_for('user', name=login)
                 if login == 'admin':
                     next = '/admin_account'
@@ -144,7 +141,7 @@ def signup():
 
 
 def total_user_orders(name):
-    user_orders = Order.query.filter_by(login=name)
+    user_orders = Order.query.filter_by(login=name).order_by(desc(Order.date))
     total_orders = []
 
     for o in user_orders:
@@ -172,13 +169,13 @@ def user(name):
             flash('Choose service!')
             redirect(url_for('user', name=name))
         else:
-            order = Order(login=name)#, status='pending')
+            order = Order(login=name)
             db.session.add(order)
             db.session.flush()
             for service in services:
                 if service:
                     order_item = OrderItem(order_id=order.id, serv_name=service,
-                                        price=db.session.query(Service.price).filter(Service.name==service))
+                                        price=db.session.query(Service.price).filter(Service.name == service))
                     db.session.add(order_item)
                 db.session.commit()
 
@@ -196,7 +193,10 @@ def admin():
     change_status = request.form.get('status')
     delete_status = request.form.get('delete')
     current_id = request.form.get('current_id')
+    order_date_first = request.form.get('order_date_first')
+    order_date_second = str(request.form.get('order_date_second')) + ' 23:59:59'
     users = db.session.query(Order.login).distinct()
+    filter_orders = []
     if request.method == 'POST':
         if delete_status:
             db.session.query(OrderItem).filter(OrderItem.order_id == current_id).delete()
@@ -207,9 +207,11 @@ def admin():
                 db.session.query(Order).filter(Order.id == current_id).update({Order.status:change_status})
                 db.session.commit()
 
+        filter_orders = db.session.query(Order).filter(Order.date.between(order_date_first, order_date_second))
+        #filter_orders = db.session.query(Order).filter(Order.date >= order_date_first, Order.date <= order_date_second)
 
     if current_user.login == 'admin':
-        return render_template('admin.html', users=users, total_user_orders=total_user_orders)
+        return render_template('admin.html', users=users, total_user_orders=total_user_orders, filter_orders=filter_orders)
     else:
         flash('Log in required!!!')
         return redirect(url_for('login'))

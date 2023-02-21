@@ -56,7 +56,42 @@ Admin Account
 </details>
 {% endfor %}
 <br><br><br>
+<p style="font-size:150%">Find orders:</p>
+<form method="post" action="{{url_for('admin')}}">
+  <label for="order_date_first">Between this date:</label>
+  <input type="date" id="order_date_first" name="order_date_first">
+  <label for="order_date_second">And this date:</label>
+  <input type="date" id="order_date_second" name="order_date_second">
+  <input formmethod="post"  type="submit" value="Find" class="btn btn-warning">
+</form>
+<style>
+    .tableFixHead {overflow-y:auto; height: 200px; }
+    .tableFixHead thead th {position: sticky; top: 0; z-index: 1;}
+    th { background:#eee;}
+</style>
 
-
+<form method="get" action="/action_page.php">
+<div class="container">
+<!---<div style="height:300px; overflow-y:scroll"> -->
+<div class="tableFixHead">
+<table style="width:100%">
+    <thead>
+        <th>Order id</th>
+        <th>Login</th>
+        <th>Date</th>
+        <th>Status</th>
+    </thead>
+{% for order in filter_orders %}
+<tr>
+  <td>{{ order.id }}</td>
+  <td>{{ order.login }}</td>
+  <td>{{ order.date }}</td>
+  <td>{{ order.status }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</div>
+</form><br>
 
 {% endblock%}
