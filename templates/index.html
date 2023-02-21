@@ -6,8 +6,13 @@ Home page
 
 {% block nav %}
 {% if current_user.is_authenticated %}
+{% if current_user.login == 'admin' %}
+<a class="nav-link fw-bold py-1 px-2" href="{{url_for('admin')}}">Admin</a>
+<a class="nav-link fw-bold py-1 px-2" href="{{url_for('logout')}}">Log out</a>
+{% else %}
 <a class="nav-link fw-bold py-1 px-2" href="/user_account/{{current_user.login}}">My account</a>
 <a class="nav-link fw-bold py-1 px-2" href="{{url_for('logout')}}">Log out</a>
+{% endif %}
 {% else %}
 <a class="nav-link fw-bold py-1 px-2" href="/login">Log in </a>
 <a class="nav-link fw-bold py-1 px-2" href="/signup">Sign up</a>

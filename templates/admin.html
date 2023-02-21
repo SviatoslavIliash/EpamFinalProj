@@ -18,7 +18,7 @@ Admin Account
 
     th { background:#eee;}
 </style>
-    <form method="get" action="/action_page.php">
+    <form method="get" >
 <div class="container">
 <!---<div style="height:300px; overflow-y:scroll"> -->
 <div class="tableFixHead">
@@ -28,23 +28,25 @@ Admin Account
         <th>Service</th>
         <th>Price</th>
         <th>Date</th>
-        <th>Status</th>
+        <th>Current Status/Status</th>
         <th>Delete Order</th>
         <th>Confirmation</th>
     </thead>
 {% for order in total_user_orders(user.login) %}
-<tr><form>
+<tr><form method="post", action="{{url_for('admin')}}">
   <td>{{ order.id }}</td>
   <td>{{ order.services }}</td>
   <td>{{ order.total_price }}</td>
   <td>{{ order.date }}</td>
-  <td><select name="status" id="status">
-    <option value="{{order.status}}"><{{order.status}}></option>
+  <td>{{order.status}}/<select name="status" id="status">
+    <option value="pending">pending</option>
     <option value="in process">in process</option>
     <option value="done">done</option>
   </select></td>
-    <td><input type="checkbox" id="delete" name="delete" value="delete"></td>
-  <td><input type="submit" value="Confirm" class="btn btn-danger"></td>
+    <td><input type="checkbox" id="delete" name="delete" value='delete'></td>
+  <td><input type="hidden" id="current_id" name="current_id" value="{{order.id}}">
+      <input type="hidden" id="current_status" name="current_status" value="{{order.status}}">
+      <input formmethod="post"  type="submit" value="Confirm" class="btn btn-danger"></td>
 </form></tr>
 {% endfor %}
 </table>

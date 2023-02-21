@@ -1,8 +1,9 @@
+import enum
 from flask import Flask, render_template, url_for, request, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 from re import match
 from flask_login import login_user, LoginManager, login_required, UserMixin, current_user, logout_user
-from sqlalchemy import func
+from sqlalchemy import func, Enum
 from werkzeug.security import check_password_hash, generate_password_hash
 
 
@@ -18,10 +19,6 @@ login_manager.login_view = 'login'
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
-
-#from flask_login import UserMixin, login_manager
-
-
 
 
 class User(db.Model, UserMixin):
@@ -58,13 +55,13 @@ class Service(db.Model):
 ### Filing Service table
 
 class Order(db.Model):
+
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     login = db.Column(db.String(50), db.ForeignKey('user.login'), nullable=False)
     date = db.Column(db.DateTime, nullable=False, server_default=func.now())
-    status = db.Column(db.String(50), nullable=False)
+    status = db.Column(db.Enum('pending', 'in process', 'done'), default='pending', nullable=False)
     services = ''
     total_price = 0
-
 
     def __repr__(self):
         return '<Order %r>' % self.id
@@ -161,9 +158,6 @@ def total_user_orders(name):
         total_orders.append(current_order)
     return total_orders
 
-def delete_order(id):
-    pass
-
 
 @app.route('/user_account/<string:name>', methods=['GET', 'POST'])
 @login_required
@@ -178,7 +172,7 @@ def user(name):
             flash('Choose service!')
             redirect(url_for('user', name=name))
         else:
-            order = Order(login=name, status='pending')
+            order = Order(login=name)#, status='pending')
             db.session.add(order)
             db.session.flush()
             for service in services:
@@ -198,7 +192,21 @@ def user(name):
 @app.route('/admin_account', methods=['GET', 'POST'])
 @login_required
 def admin():
+    current_status = request.form.get('current_status')
+    change_status = request.form.get('status')
+    delete_status = request.form.get('delete')
+    current_id = request.form.get('current_id')
     users = db.session.query(Order.login).distinct()
+    if request.method == 'POST':
+        if delete_status:
+            db.session.query(OrderItem).filter(OrderItem.order_id == current_id).delete()
+            db.session.query(Order).filter(Order.id == current_id).delete()
+            db.session.commit()
+        else:
+            if change_status != current_status:
+                db.session.query(Order).filter(Order.id == current_id).update({Order.status:change_status})
+                db.session.commit()
+
 
     if current_user.login == 'admin':
         return render_template('admin.html', users=users, total_user_orders=total_user_orders)
