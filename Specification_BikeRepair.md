@@ -13,7 +13,7 @@ ___
 ## Main page
 Client can look at provided services
 
-![Home](/Users/mac/PycharmProjects/EpamFinalProject/static/images/HomePage.png "Pic.1 Home page")
+![Home](./static/images/HomePage.png "Pic.1 Home page")
 *Pic.1 Home page*
 
 *main scenario:*
@@ -24,10 +24,10 @@ User chooses "Log in" or "Sign up"
   
 User selects "Sign up" or "Log in".
 
-![Sign up]( /Users/mac/PycharmProjects/EpamFinalProject/static/images/SignUp.png "Pic.2 Sign up page")
+![Sign up](./static/images/SignUp.png "Pic.2 Sign up page")
 *Pic.2 Sign up page*
 
-![Log in]( /Users/mac/PycharmProjects/EpamFinalProject/static/images/LogIn.png "Pic.3 Log in page")
+![Log in]( ./static/images/LogIn.png "Pic.3 Log in page")
 *Pic.3 Log in page*
 
 *main scenario:*
@@ -42,7 +42,7 @@ User selects "Sign up" or "Log in".
 
 ## User page
 
-![User page]( /Users/mac/PycharmProjects/EpamFinalProject/static/images/AccountPage.png "Pic.4 User page")
+![User page]( ./static/images/AccountPage.png "Pic.4 User page")
 *Pic.4 User page*
 
 *main scenario:*
@@ -53,7 +53,7 @@ User selects "Sign up" or "Log in".
 
 ## Admin page
 
-![Admin]( /Users/mac/PycharmProjects/EpamFinalProject/static/images/AminPage.png "Pic.5 Admin page")
+![Admin](./static/images/AminPage.png "Pic.5 Admin page")
 *Pic.5 Admin page*
 
 *main scenario:*
