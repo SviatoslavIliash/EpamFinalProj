@@ -13,7 +13,8 @@ ___
 ## Main page
 Client can look at provided services
 
-![Alt text](/HomePage.png "Pic.1 Home page")
+![Home](/Users/mac/PycharmProjects/EpamFinalProject/static/images/HomePage.png "Pic.1 Home page")
+*Pic.1 Home page*
 
 *main scenario:*
 
@@ -22,6 +23,15 @@ User chooses "Log in" or "Sign up"
 ## Authentication
   
 User selects "Sign up" or "Log in".
+
+![Sign up]( /Users/mac/PycharmProjects/EpamFinalProject/static/images/SignUp.png "Pic.2 Sign up page")
+*Pic.2 Sign up page*
+
+![Log in]( /Users/mac/PycharmProjects/EpamFinalProject/static/images/LogIn.png "Pic.3 Log in page")
+*Pic.3 Log in page*
+
+*main scenario:*
+
 1. For "Log in" user fill  "login", "password" and click submit;
 - if entered data is valid, then user is redirected to "User page";
 - if entered data is not valid, error message occurs.
@@ -32,6 +42,9 @@ User selects "Sign up" or "Log in".
 
 ## User page
 
+![User page]( /Users/mac/PycharmProjects/EpamFinalProject/static/images/AccountPage.png "Pic.4 User page")
+*Pic.4 User page*
+
 *main scenario:*
 
 1. User looks at list of services and chooses one or several options;
@@ -39,6 +52,9 @@ User selects "Sign up" or "Log in".
 3. User can see the list of his orders in the bottom.
 
 ## Admin page
+
+![Admin]( /Users/mac/PycharmProjects/EpamFinalProject/static/images/AminPage.png "Pic.5 Admin page")
+*Pic.5 Admin page*
 
 *main scenario:*
 
