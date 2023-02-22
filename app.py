@@ -1,8 +1,9 @@
 from flask import Flask, render_template, url_for, request, flash, redirect
-from flask_sqlalchemy import SQLAlchemy
 from re import match
+
 from flask_login import login_user, LoginManager, login_required, UserMixin, current_user, logout_user
-from sqlalchemy import func, desc, and_
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import func, desc
 from werkzeug.security import check_password_hash, generate_password_hash
 
 
@@ -208,7 +209,6 @@ def admin():
                 db.session.commit()
 
         filter_orders = db.session.query(Order).filter(Order.date.between(order_date_first, order_date_second))
-        #filter_orders = db.session.query(Order).filter(Order.date >= order_date_first, Order.date <= order_date_second)
 
     if current_user.login == 'admin':
         return render_template('admin.html', users=users, total_user_orders=total_user_orders, filter_orders=filter_orders)

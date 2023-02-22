@@ -1,31 +1,30 @@
 {% extends 'base.html' %}
 
-{% block title%}
-Log in page
-{% endblock%}
+{% block title%}Log in page{% endblock%}
 
 {%block nav%}<a class="nav-link fw-bold py-1 px-2" href="/signup">Sign up</a>{% endblock %}
 
 {% block body %}
-<div class="container mt-5">
+  <div class="container mt-5">
     <h1>Log in</h1>
 
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <ul class=flashes>
-    {% for message in messages %}
-      <p style="color:red; font-size:200%;">{{ message }}</p>
-    {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %}<br>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <p style="color:red; font-size:200%;">{{ message }}</p>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}<br>
 
     <form method="post">
-        <label for="login" class="form-label">User name</label>
-        <input type="text" name="login" id="login" class="form-control" placeholder="Enter user name"><br>
-        <label for="password" class="form-label">Password</label>
-        <input type="password" name="password" id="password" class="form-control" placeholder="Enter password"><br>
-        <input type="submit" class="btn btn-success" value="Log in">
+      <label for="login" class="form-label">User name</label>
+      <input type="text" name="login" id="login" class="form-control" placeholder="Enter user name"><br>
+      <label for="password" class="form-label">Password</label>
+      <input type="password" name="password" id="password" class="form-control" placeholder="Enter password"><br>
+      <input type="submit" class="btn btn-success" value="Log in">
     </form>
-</div><br><br><br><br>
+  </div><br><br><br><br>
+
 {% endblock %}

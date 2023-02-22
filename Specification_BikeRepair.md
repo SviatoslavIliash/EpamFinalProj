@@ -13,6 +13,8 @@ ___
 ## Main page
 Client can look at provided services
 
+![Alt text](/HomePage.png "Pic.1 Home page")
+
 *main scenario:*
 
 User chooses "Log in" or "Sign up"

@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title%}
-Admin Account
-{% endblock%}
+{% block title%}Admin Account{% endblock%}
 
 {%block nav%}<a class="nav-link fw-bold py-1 px-2" href="{{url_for('logout')}}">Log out</a>{% endblock %}
 
 {% block body%}
-    <h1 style="font-size:200%">Welcome, Admin</h1><br>
+  <h1 style="font-size:200%">Welcome, Admin</h1><br>
 
 {% for user in users %}
 <details>
@@ -15,12 +13,10 @@ Admin Account
     <style>
     .tableFixHead {overflow-y:auto; height: 200px; }
     .tableFixHead thead th {position: sticky; top: 0; z-index: 1;}
-
     th { background:#eee;}
 </style>
     <form method="get" >
 <div class="container">
-<!---<div style="height:300px; overflow-y:scroll"> -->
 <div class="tableFixHead">
 <table style="width:100%">
     <thead>
@@ -71,27 +67,26 @@ Admin Account
 </style>
 
 <form method="get" action="/action_page.php">
-<div class="container">
-<!---<div style="height:300px; overflow-y:scroll"> -->
-<div class="tableFixHead">
-<table style="width:100%">
-    <thead>
-        <th>Order id</th>
-        <th>Login</th>
-        <th>Date</th>
-        <th>Status</th>
-    </thead>
-{% for order in filter_orders %}
-<tr>
-  <td>{{ order.id }}</td>
-  <td>{{ order.login }}</td>
-  <td>{{ order.date }}</td>
-  <td>{{ order.status }}</td>
-</tr>
-{% endfor %}
-</table>
-</div>
-</div>
+  <div class="container">
+    <div class="tableFixHead">
+      <table style="width:100%">
+        <thead>
+          <th>Order id</th>
+          <th>Login</th>
+          <th>Date</th>
+          <th>Status</th>
+        </thead>
+      {% for order in filter_orders %}
+        <tr>
+          <td>{{ order.id }}</td>
+          <td>{{ order.login }}</td>
+          <td>{{ order.date }}</td>
+          <td>{{ order.status }}</td>
+        </tr>
+      {% endfor %}
+     </table>
+   </div>
+  </div>
 </form><br>
 
 {% endblock%}

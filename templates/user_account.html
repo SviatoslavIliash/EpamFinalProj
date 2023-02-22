@@ -1,23 +1,21 @@
 {% extends 'base.html' %}
 
-{% block title%}
-User Account
-{% endblock%}
+{% block title%}User Account{% endblock%}
 
 {%block nav%}<a class="nav-link fw-bold py-1 px-2" href="{{url_for('logout')}}">Log out</a>{% endblock %}
 
 {% block body%}
-<h1 style="font-size:200%">Welcome, {{name}}</h1><br>
-<p style="font-size:150%">Choose service for you two-wheeled friend:</p>
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <ul class=flashes>
-    {% for message in messages %}
-      <p style="color:red; font-size:200%;">{{ message }}</p>
-    {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %}<br>
+  <h1 style="font-size:200%">Welcome, {{name}}</h1><br>
+  <p style="font-size:150%">Choose service for you two-wheeled friend:</p>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class=flashes>
+      {% for message in messages %}
+        <p style="color:red; font-size:200%;">{{ message }}</p>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}<br>
 
 <form style="text-align: left;" method="post" action="{{url_for('user', name=name)}}">
   <input type="checkbox" id="service1" name="wash" value="wash">
@@ -34,13 +32,11 @@ User Account
 <style>
     .tableFixHead {overflow-y:auto; height: 300px; }
     .tableFixHead thead th {position: sticky; top: 0; z-index: 1;}
-
     th { background:#eee;}
 </style>
 
 <form method="get" action="/action_page.php">
 <div class="container">
-<!---<div style="height:300px; overflow-y:scroll"> -->
 <div class="tableFixHead">
 <table style="width:100%">
     <thead>
@@ -51,18 +47,17 @@ User Account
         <th>Status</th>
     </thead>
 {% for order in user_orders %}
-<tr>
-  <td>{{ order.id }}</td>
-  <td>{{ order.services }}</td>
-  <td>{{ order.total_price }}</td>
-  <td>{{ order.date }}</td>
-  <td>{{ order.status }}</td>
-</tr>
+  <tr>
+    <td>{{ order.id }}</td>
+    <td>{{ order.services }}</td>
+    <td>{{ order.total_price }}</td>
+    <td>{{ order.date }}</td>
+    <td>{{ order.status }}</td>
+  </tr>
 {% endfor %}
 </table>
 </div>
 </div>
 </form><br><br><br>
-
 
 {% endblock%}
