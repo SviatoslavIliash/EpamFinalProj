@@ -13,7 +13,7 @@ ___
 ## Main page
 Client can look at provided services
 
-![Home](./static/images/HomePage.png "Pic.1 Home page")
+![Home](../static/images/HomePage.png "Pic.1 Home page")
 *Pic.1 Home page*
 
 *main scenario:*
@@ -24,10 +24,10 @@ User chooses "Log in" or "Sign up"
   
 User selects "Sign up" or "Log in".
 
-![Sign up](./static/images/SignUp.png "Pic.2 Sign up page")
+![Sign up](../static/images/SignUp.png "Pic.2 Sign up page")
 *Pic.2 Sign up page*
 
-![Log in]( ./static/images/LogIn.png "Pic.3 Log in page")
+![Log in]( ../static/images/LogIn.png "Pic.3 Log in page")
 *Pic.3 Log in page*
 
 *main scenario:*
@@ -42,7 +42,7 @@ User selects "Sign up" or "Log in".
 
 ## User page
 
-![User page]( ./static/images/AccountPage.png "Pic.4 User page")
+![User page]( ../static/images/AccountPage.png "Pic.4 User page")
 *Pic.4 User page*
 
 *main scenario:*
@@ -53,11 +53,13 @@ User selects "Sign up" or "Log in".
 
 ## Admin page
 
-![Admin](./static/images/AminPage.png "Pic.5 Admin page")
+![Admin](../static/images/AminPage.png "Pic.5 Admin page")
 *Pic.5 Admin page*
 
 *main scenario:*
 
-1. Admin can choose client
-2. Admin can change order status option: "Pending", "In process" or "Done"
-3. Admin can delete completed orders
+1. Admin can choose client which did an order; 
+2. Admin can change order status option: "Pending", "In process" or "Done";
+3. Admin can delete completed orders;
+4. All changes commits by pushing "confirm".
+5. Admin can find orders by the date, after that choose users and look at order information 
