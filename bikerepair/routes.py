@@ -1,17 +1,15 @@
-from flask import Flask, render_template, url_for, request, flash, redirect
 from re import match
 
-from flask_login import login_user, LoginManager, login_required, UserMixin, current_user, logout_user
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import func, desc
+from flask import render_template, url_for, request, flash, redirect
 from werkzeug.security import check_password_hash, generate_password_hash
+from flask_login import login_user, LoginManager, login_required, current_user, logout_user
+from sqlalchemy import desc
 
 
-app = Flask(__name__)
-app.secret_key = 'some secret key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:2570947K!@localhost/bikerepair'
-app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False
-db = SQLAlchemy(app)
+from bikerepair import app, db
+from bikerepair.models import User, Order, OrderItem, Service
+
+
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
@@ -20,61 +18,6 @@ login_manager.login_view = 'login'
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
-
-
-class User(db.Model, UserMixin):
-    user_id = db.Column(db.Integer, primary_key=True)
-    login = db.Column(db.String(50), unique=True, nullable=False)
-    password = db.Column(db.String(255), nullable=False)
-    email = db.Column(db.String(100), nullable=False)
-
-    def __repr__(self):
-        return '<User %r>' % self.login
-
-    def get_id(self):
-        return self.user_id
-
-
-class Service(db.Model):
-    name = db.Column(db.String(50), primary_key=True, unique=True, nullable=False)
-    price = db.Column(db.Integer, nullable=False)
-
-    @staticmethod
-    def default_table(current_db):
-        current_db.session.add_all([
-            Service(name='wash', price='50'),
-            Service(name='repair', price='100'),
-            Service(name='upgrade', price='150'),
-            Service(name='lube_chain', price='50')
-        ])
-        current_db.session.commit()
-
-    def __repr__(self):
-        return '<Service %r>' % self.servname
-
-
-class Order(db.Model):
-
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    login = db.Column(db.String(50), db.ForeignKey('user.login'), nullable=False)
-    date = db.Column(db.DateTime, nullable=False, server_default=func.now())
-    status = db.Column(db.Enum('pending', 'in process', 'done'), default='pending', nullable=False)
-    services = ''
-    total_price = 0
-
-    def __repr__(self):
-        return '<Order %r>' % self.id
-
-
-class OrderItem(db.Model):
-    order_id = db.Column(db.Integer, db.ForeignKey('order.id'), primary_key=True, nullable=False)
-    serv_name = db.Column(db.String(50), db.ForeignKey('service.name'), primary_key=True, nullable=False)
-    price = db.Column(db.Integer, nullable=False)
-
-
-with app.app_context():
-    db.create_all()
-    #Service.default_table(db)
 
 
 @app.route('/', methods=['GET'])
@@ -215,7 +158,3 @@ def admin():
     else:
         flash('Log in required!!!')
         return redirect(url_for('login'))
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
