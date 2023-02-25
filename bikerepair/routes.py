@@ -1,4 +1,5 @@
 from re import match
+import logging
 
 from flask import render_template, url_for, request, flash, redirect
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -10,22 +11,40 @@ from bikerepair import app, db
 from bikerepair.models import User, Order, OrderItem, Service
 
 
+# create root logger
+logger = logging.getLogger()
+logFormatter = logging.Formatter(
+    "%(asctime)s - %(levelname)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
+# add console handler to the root logger
+consoleHandler = logging.StreamHandler()
+consoleHandler.setFormatter(logFormatter)
+logger.addHandler(consoleHandler)
+
+# add file handler to the root logger
+fileHandler = logging.FileHandler('bikerepair.log')
+fileHandler.setFormatter(logFormatter)
+logger.addHandler(fileHandler)
+
+# create Flask login manager
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 
+# configure login_manager
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
 
 
+# route for home page
 @app.route('/', methods=['GET'])
 @app.route('/home', methods=['GET'])
 def index():
     return render_template("index.html")
 
 
+# route for login page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     login = request.form.get('login')
@@ -49,6 +68,7 @@ def login():
     return render_template('login.html')
 
 
+# route for logout function
 @app.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
@@ -57,6 +77,7 @@ def logout():
     return redirect(url_for('login'))
 
 
+# route for signup page
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     login = request.form.get('login')
@@ -84,6 +105,7 @@ def signup():
     return render_template("signup.html")
 
 
+# total_user_function using by two routes Admin and User
 def total_user_orders(name):
     user_orders = Order.query.filter_by(login=name).order_by(desc(Order.date))
     total_orders = []
@@ -100,6 +122,7 @@ def total_user_orders(name):
     return total_orders
 
 
+# route for user account
 @app.route('/user_account/<string:name>', methods=['GET', 'POST'])
 @login_required
 def user(name):
@@ -119,7 +142,8 @@ def user(name):
             for service in services:
                 if service:
                     order_item = OrderItem(order_id=order.id, serv_name=service,
-                                        price=db.session.query(Service.price).filter(Service.name == service))
+                        price=db.session.query(Service.price).filter(
+                            Service.name == service))
                     db.session.add(order_item)
                 db.session.commit()
 
@@ -130,6 +154,7 @@ def user(name):
         return redirect(url_for('login'))
 
 
+# route for admin account
 @app.route('/admin_account', methods=['GET', 'POST'])
 @login_required
 def admin():
@@ -139,6 +164,7 @@ def admin():
     current_id = request.form.get('current_id')
     order_date_first = request.form.get('order_date_first')
     order_date_second = str(request.form.get('order_date_second')) + ' 23:59:59'
+# added hours:minutes:seconds to take orders in current date
     users = db.session.query(Order.login).distinct()
     filter_orders = []
     if request.method == 'POST':
@@ -148,10 +174,12 @@ def admin():
             db.session.commit()
         else:
             if change_status != current_status:
-                db.session.query(Order).filter(Order.id == current_id).update({Order.status:change_status})
+                db.session.query(Order).filter(Order.id == current_id).update(
+                    {Order.status:change_status})
                 db.session.commit()
 
-        filter_orders = db.session.query(Order).filter(Order.date.between(order_date_first, order_date_second))
+        filter_orders = db.session.query(Order).filter(Order.date.between(
+            order_date_first, order_date_second))
 
     if current_user.login == 'admin':
         return render_template('admin.html', users=users, total_user_orders=total_user_orders, filter_orders=filter_orders)

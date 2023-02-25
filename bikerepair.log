@@ -1,0 +1,20 @@
+2023-02-25 11:59:00 - INFO - 127.0.0.1 - - [25/Feb/2023 11:59:00] "GET /signup HTTP/1.1" 200 -
+2023-02-25 12:07:52 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-25 12:07:52 - INFO - [33mPress CTRL+C to quit[0m
+2023-02-25 12:07:52 - INFO -  * Restarting with stat
+2023-02-25 12:07:52 - WARNING -  * Debugger is active!
+2023-02-25 12:07:52 - INFO -  * Debugger PIN: 136-091-870
+2023-02-25 12:08:03 - INFO - 127.0.0.1 - - [25/Feb/2023 12:08:03] "GET / HTTP/1.1" 200 -
+2023-02-25 12:08:03 - INFO - 127.0.0.1 - - [25/Feb/2023 12:08:03] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-25 12:08:05 - INFO - 127.0.0.1 - - [25/Feb/2023 12:08:05] "GET / HTTP/1.1" 200 -
+2023-02-25 12:08:05 - INFO - 127.0.0.1 - - [25/Feb/2023 12:08:05] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-25 12:08:13 - INFO - 127.0.0.1 - - [25/Feb/2023 12:08:13] "GET /signup HTTP/1.1" 200 -
+2023-02-25 12:08:19 - INFO - 127.0.0.1 - - [25/Feb/2023 12:08:19] "GET / HTTP/1.1" 200 -
+2023-02-25 12:08:19 - INFO - 127.0.0.1 - - [25/Feb/2023 12:08:19] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-25 12:08:28 - INFO - 127.0.0.1 - - [25/Feb/2023 12:08:28] "GET /login HTTP/1.1" 200 -
+2023-02-25 12:08:33 - INFO - 127.0.0.1 - - [25/Feb/2023 12:08:33] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-02-25 12:08:33 - INFO - 127.0.0.1 - - [25/Feb/2023 12:08:33] "GET /user_account/bob HTTP/1.1" 200 -
+2023-02-25 12:08:47 - INFO - 127.0.0.1 - - [25/Feb/2023 12:08:47] "POST /user_account/bob HTTP/1.1" 200 -
+2023-02-25 12:10:56 - INFO - 127.0.0.1 - - [25/Feb/2023 12:10:56] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-02-25 12:10:56 - INFO - 127.0.0.1 - - [25/Feb/2023 12:10:56] "GET /login HTTP/1.1" 200 -
