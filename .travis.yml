@@ -6,4 +6,5 @@ python:
 before_install:
   - python -m pip install --upgrade pip
 script:
-  - python -m pytest -v
+  - python -m pytest -v tests/tests.py
+
