@@ -1,4 +1,6 @@
 
-language: python 3.10.6
+language: python
+python:
+  - "3.10.6"
 script:
   - python -m pytest -v
