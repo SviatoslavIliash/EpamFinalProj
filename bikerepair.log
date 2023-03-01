@@ -18,3 +18,840 @@
 2023-02-25 12:08:47 - INFO - 127.0.0.1 - - [25/Feb/2023 12:08:47] "POST /user_account/bob HTTP/1.1" 200 -
 2023-02-25 12:10:56 - INFO - 127.0.0.1 - - [25/Feb/2023 12:10:56] "[32mGET /logout HTTP/1.1[0m" 302 -
 2023-02-25 12:10:56 - INFO - 127.0.0.1 - - [25/Feb/2023 12:10:56] "GET /login HTTP/1.1" 200 -
+2023-02-27 22:03:42 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-27 22:03:42 - INFO - [33mPress CTRL+C to quit[0m
+2023-02-27 22:03:42 - INFO -  * Restarting with stat
+2023-02-27 22:03:43 - WARNING -  * Debugger is active!
+2023-02-27 22:03:43 - INFO -  * Debugger PIN: 136-091-870
+2023-02-27 22:04:12 - INFO - 127.0.0.1 - - [27/Feb/2023 22:04:12] "GET / HTTP/1.1" 200 -
+2023-02-27 22:04:12 - INFO - 127.0.0.1 - - [27/Feb/2023 22:04:12] "GET /static/images/BikeRepair.png HTTP/1.1" 200 -
+2023-02-27 22:04:16 - INFO - 127.0.0.1 - - [27/Feb/2023 22:04:16] "GET /login HTTP/1.1" 200 -
+2023-02-27 22:04:23 - INFO - 127.0.0.1 - - [27/Feb/2023 22:04:23] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-02-27 22:04:23 - INFO - 127.0.0.1 - - [27/Feb/2023 22:04:23] "GET /user_account/bob HTTP/1.1" 200 -
+2023-02-27 22:05:41 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-27 22:05:41 - INFO - [33mPress CTRL+C to quit[0m
+2023-02-27 22:05:41 - INFO -  * Restarting with stat
+2023-02-27 22:05:41 - WARNING -  * Debugger is active!
+2023-02-27 22:05:41 - INFO -  * Debugger PIN: 136-091-870
+2023-02-27 22:36:17 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-27 22:36:17 - INFO - [33mPress CTRL+C to quit[0m
+2023-02-27 22:36:17 - INFO -  * Restarting with stat
+2023-02-27 22:36:17 - WARNING -  * Debugger is active!
+2023-02-27 22:36:17 - INFO -  * Debugger PIN: 136-091-870
+2023-02-27 22:36:59 - INFO - 127.0.0.1 - - [27/Feb/2023 22:36:59] "GET / HTTP/1.1" 200 -
+2023-02-27 22:36:59 - INFO - 127.0.0.1 - - [27/Feb/2023 22:36:59] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-27 22:37:21 - WARNING -  * Debugger is active!
+2023-02-27 22:37:21 - INFO -  * Debugger PIN: 136-091-870
+2023-02-27 22:37:34 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-27 22:37:34 - INFO - [33mPress CTRL+C to quit[0m
+2023-02-27 22:37:34 - INFO -  * Restarting with stat
+2023-02-27 22:37:35 - WARNING -  * Debugger is active!
+2023-02-27 22:37:35 - INFO -  * Debugger PIN: 136-091-870
+2023-02-27 22:37:37 - INFO - 127.0.0.1 - - [27/Feb/2023 22:37:37] "GET / HTTP/1.1" 200 -
+2023-02-27 22:37:37 - INFO - 127.0.0.1 - - [27/Feb/2023 22:37:37] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-27 22:37:40 - INFO - 127.0.0.1 - - [27/Feb/2023 22:37:40] "GET / HTTP/1.1" 200 -
+2023-02-27 22:37:40 - INFO - 127.0.0.1 - - [27/Feb/2023 22:37:40] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-27 22:39:36 - INFO - 127.0.0.1 - - [27/Feb/2023 22:39:36] "GET /user_account/bob HTTP/1.1" 200 -
+2023-02-27 22:39:38 - INFO - 127.0.0.1 - - [27/Feb/2023 22:39:38] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-02-27 22:39:38 - INFO - 127.0.0.1 - - [27/Feb/2023 22:39:38] "GET /login HTTP/1.1" 200 -
+2023-02-27 22:39:42 - INFO - 127.0.0.1 - - [27/Feb/2023 22:39:42] "GET / HTTP/1.1" 200 -
+2023-02-27 22:39:42 - INFO - 127.0.0.1 - - [27/Feb/2023 22:39:42] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-27 22:39:42 - INFO - 127.0.0.1 - - [27/Feb/2023 22:39:42] "GET /login HTTP/1.1" 200 -
+2023-02-27 22:39:49 - INFO - 127.0.0.1 - - [27/Feb/2023 22:39:49] "POST /login HTTP/1.1" 200 -
+2023-02-27 22:39:55 - INFO - 127.0.0.1 - - [27/Feb/2023 22:39:55] "POST /login HTTP/1.1" 200 -
+2023-02-27 22:39:59 - INFO - 127.0.0.1 - - [27/Feb/2023 22:39:59] "POST /login HTTP/1.1" 200 -
+2023-02-27 22:40:03 - INFO - 127.0.0.1 - - [27/Feb/2023 22:40:03] "GET /signup HTTP/1.1" 200 -
+2023-02-27 22:40:06 - INFO - 127.0.0.1 - - [27/Feb/2023 22:40:06] "POST /signup HTTP/1.1" 200 -
+2023-02-27 22:56:53 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-27 22:56:53 - INFO - [33mPress CTRL+C to quit[0m
+2023-02-27 22:56:53 - INFO -  * Restarting with stat
+2023-02-27 22:56:53 - WARNING -  * Debugger is active!
+2023-02-27 22:56:53 - INFO -  * Debugger PIN: 136-091-870
+2023-02-27 22:56:58 - INFO - 127.0.0.1 - - [27/Feb/2023 22:56:58] "GET / HTTP/1.1" 200 -
+2023-02-27 22:56:58 - INFO - 127.0.0.1 - - [27/Feb/2023 22:56:58] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-27 22:57:00 - INFO - 127.0.0.1 - - [27/Feb/2023 22:57:00] "GET /login HTTP/1.1" 200 -
+2023-02-27 22:57:02 - INFO - 127.0.0.1 - - [27/Feb/2023 22:57:02] "GET / HTTP/1.1" 200 -
+2023-02-27 22:57:02 - INFO - 127.0.0.1 - - [27/Feb/2023 22:57:02] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-27 22:57:03 - INFO - 127.0.0.1 - - [27/Feb/2023 22:57:03] "GET /signup HTTP/1.1" 200 -
+2023-02-27 22:57:04 - INFO - 127.0.0.1 - - [27/Feb/2023 22:57:04] "GET / HTTP/1.1" 200 -
+2023-02-27 22:57:04 - INFO - 127.0.0.1 - - [27/Feb/2023 22:57:04] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-27 23:39:17 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-27 23:39:17 - INFO - [33mPress CTRL+C to quit[0m
+2023-02-27 23:39:17 - INFO -  * Restarting with stat
+2023-02-27 23:39:17 - WARNING -  * Debugger is active!
+2023-02-27 23:39:17 - INFO -  * Debugger PIN: 136-091-870
+2023-02-27 23:39:26 - INFO - 127.0.0.1 - - [27/Feb/2023 23:39:26] "GET / HTTP/1.1" 200 -
+2023-02-27 23:39:26 - INFO - 127.0.0.1 - - [27/Feb/2023 23:39:26] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-27 23:39:28 - INFO - 127.0.0.1 - - [27/Feb/2023 23:39:28] "GET /login HTTP/1.1" 200 -
+2023-02-27 23:39:33 - INFO - 127.0.0.1 - - [27/Feb/2023 23:39:33] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-02-27 23:39:34 - INFO - 127.0.0.1 - - [27/Feb/2023 23:39:34] "GET /user_account/bob HTTP/1.1" 200 -
+2023-02-27 23:39:39 - INFO - 127.0.0.1 - - [27/Feb/2023 23:39:39] "GET / HTTP/1.1" 200 -
+2023-02-27 23:39:39 - INFO - 127.0.0.1 - - [27/Feb/2023 23:39:39] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-27 23:39:40 - INFO - 127.0.0.1 - - [27/Feb/2023 23:39:40] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-02-27 23:39:40 - INFO - 127.0.0.1 - - [27/Feb/2023 23:39:40] "GET /login HTTP/1.1" 200 -
+2023-02-27 23:39:45 - INFO - 127.0.0.1 - - [27/Feb/2023 23:39:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-02-27 23:39:45 - INFO - 127.0.0.1 - - [27/Feb/2023 23:39:45] "GET /admin_account HTTP/1.1" 200 -
+2023-02-27 23:40:03 - INFO - 127.0.0.1 - - [27/Feb/2023 23:40:03] "POST /admin_account HTTP/1.1" 200 -
+2023-02-27 23:40:07 - INFO - 127.0.0.1 - - [27/Feb/2023 23:40:07] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-02-27 23:40:07 - INFO - 127.0.0.1 - - [27/Feb/2023 23:40:07] "GET /login HTTP/1.1" 200 -
+2023-02-27 23:40:08 - INFO - 127.0.0.1 - - [27/Feb/2023 23:40:08] "GET / HTTP/1.1" 200 -
+2023-02-27 23:40:08 - INFO - 127.0.0.1 - - [27/Feb/2023 23:40:08] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-28 00:32:32 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-28 00:32:32 - INFO - [33mPress CTRL+C to quit[0m
+2023-02-28 00:32:32 - INFO -  * Restarting with stat
+2023-02-28 00:32:32 - WARNING -  * Debugger is active!
+2023-02-28 00:32:32 - INFO -  * Debugger PIN: 136-091-870
+2023-02-28 00:32:38 - INFO - 127.0.0.1 - - [28/Feb/2023 00:32:38] "GET / HTTP/1.1" 200 -
+2023-02-28 00:32:38 - INFO - 127.0.0.1 - - [28/Feb/2023 00:32:38] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-28 00:32:40 - INFO - 127.0.0.1 - - [28/Feb/2023 00:32:40] "GET / HTTP/1.1" 200 -
+2023-02-28 00:32:40 - INFO - 127.0.0.1 - - [28/Feb/2023 00:32:40] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-28 00:32:40 - INFO - 127.0.0.1 - - [28/Feb/2023 00:32:40] "GET /login HTTP/1.1" 200 -
+2023-02-28 00:32:41 - INFO - 127.0.0.1 - - [28/Feb/2023 00:32:41] "GET /signup HTTP/1.1" 200 -
+2023-02-28 00:32:42 - INFO - 127.0.0.1 - - [28/Feb/2023 00:32:42] "GET / HTTP/1.1" 200 -
+2023-02-28 00:32:42 - INFO - 127.0.0.1 - - [28/Feb/2023 00:32:42] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-28 00:51:11 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-28 00:51:11 - INFO - [33mPress CTRL+C to quit[0m
+2023-02-28 00:51:11 - INFO -  * Restarting with stat
+2023-02-28 00:51:11 - WARNING -  * Debugger is active!
+2023-02-28 00:51:12 - INFO -  * Debugger PIN: 136-091-870
+2023-02-28 00:51:17 - INFO - 127.0.0.1 - - [28/Feb/2023 00:51:17] "GET / HTTP/1.1" 200 -
+2023-02-28 00:51:17 - INFO - 127.0.0.1 - - [28/Feb/2023 00:51:17] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-28 00:51:19 - INFO - 127.0.0.1 - - [28/Feb/2023 00:51:19] "GET /login HTTP/1.1" 200 -
+2023-02-28 00:51:19 - INFO - 127.0.0.1 - - [28/Feb/2023 00:51:19] "GET /signup HTTP/1.1" 200 -
+2023-02-28 00:51:20 - INFO - 127.0.0.1 - - [28/Feb/2023 00:51:20] "GET / HTTP/1.1" 200 -
+2023-02-28 00:51:20 - INFO - 127.0.0.1 - - [28/Feb/2023 00:51:20] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-28 00:54:42 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-28 00:54:42 - INFO - [33mPress CTRL+C to quit[0m
+2023-02-28 00:54:42 - INFO -  * Restarting with stat
+2023-02-28 00:54:42 - WARNING -  * Debugger is active!
+2023-02-28 00:54:42 - INFO -  * Debugger PIN: 136-091-870
+2023-02-28 00:54:45 - INFO - 127.0.0.1 - - [28/Feb/2023 00:54:45] "GET / HTTP/1.1" 200 -
+2023-02-28 00:54:45 - INFO - 127.0.0.1 - - [28/Feb/2023 00:54:45] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-02-28 00:54:46 - INFO - 127.0.0.1 - - [28/Feb/2023 00:54:46] "GET /login HTTP/1.1" 200 -
+2023-03-01 15:28:47 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'bikerepair.user' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py", line 23, in index
+    return render_template("index.html")
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 128, in _render
+    app.update_template_context(context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 994, in update_template_context
+    context.update(func())
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/utils.py", line 407, in _user_context_processor
+    return dict(current_user=_get_user())
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py", line 16, in load_user
+    return User.query.get(user_id)
+  File "<string>", line 2, in get
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 383, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 1130, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+    return self.session._get_impl(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3657, in _get_impl
+    return db_load_fn(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+    session.execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2229, in execute
+    return self._execute_internal(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 252, in orm_execute_statement
+    result = conn.execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1414, in execute
+    return meth(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 485, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'bikerepair.user' doesn't exist")
+[SQL: SELECT user.user_id AS user_user_id, user.login AS user_login, user.password AS user_password, user.email AS user_email 
+FROM user 
+WHERE user.user_id = %(pk_1)s]
+[parameters: {'pk_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2023-03-01 15:54:22 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'bikerepair.user' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py", line 23, in index
+    return render_template("index.html")
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 128, in _render
+    app.update_template_context(context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 994, in update_template_context
+    context.update(func())
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/utils.py", line 407, in _user_context_processor
+    return dict(current_user=_get_user())
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py", line 16, in load_user
+    return User.query.get(user_id)
+  File "<string>", line 2, in get
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 383, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 1130, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+    return self.session._get_impl(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3657, in _get_impl
+    return db_load_fn(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+    session.execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2229, in execute
+    return self._execute_internal(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 252, in orm_execute_statement
+    result = conn.execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1414, in execute
+    return meth(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 485, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'bikerepair.user' doesn't exist")
+[SQL: SELECT user.user_id AS user_user_id, user.login AS user_login, user.password AS user_password, user.email AS user_email 
+FROM user 
+WHERE user.user_id = %(pk_1)s]
+[parameters: {'pk_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2023-03-01 15:54:24 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'bikerepair.user' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py", line 23, in index
+    return render_template("index.html")
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 128, in _render
+    app.update_template_context(context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 994, in update_template_context
+    context.update(func())
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/utils.py", line 407, in _user_context_processor
+    return dict(current_user=_get_user())
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py", line 16, in load_user
+    return User.query.get(user_id)
+  File "<string>", line 2, in get
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 383, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 1130, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+    return self.session._get_impl(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3657, in _get_impl
+    return db_load_fn(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+    session.execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2229, in execute
+    return self._execute_internal(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 252, in orm_execute_statement
+    result = conn.execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1414, in execute
+    return meth(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 485, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'bikerepair.user' doesn't exist")
+[SQL: SELECT user.user_id AS user_user_id, user.login AS user_login, user.password AS user_password, user.email AS user_email 
+FROM user 
+WHERE user.user_id = %(pk_1)s]
+[parameters: {'pk_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2023-03-01 15:58:57 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'bikerepair.user' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py", line 23, in index
+    return render_template("index.html")
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 128, in _render
+    app.update_template_context(context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 994, in update_template_context
+    context.update(func())
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/utils.py", line 407, in _user_context_processor
+    return dict(current_user=_get_user())
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py", line 16, in load_user
+    return User.query.get(user_id)
+  File "<string>", line 2, in get
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 383, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 1130, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+    return self.session._get_impl(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3657, in _get_impl
+    return db_load_fn(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+    session.execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2229, in execute
+    return self._execute_internal(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 252, in orm_execute_statement
+    result = conn.execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1414, in execute
+    return meth(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 485, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'bikerepair.user' doesn't exist")
+[SQL: SELECT user.user_id AS user_user_id, user.login AS user_login, user.password AS user_password, user.email AS user_email 
+FROM user 
+WHERE user.user_id = %(pk_1)s]
+[parameters: {'pk_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2023-03-01 16:37:55 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py", line 23, in index
+    return render_template("index.html")
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 128, in _render
+    app.update_template_context(context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 994, in update_template_context
+    context.update(func())
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/utils.py", line 407, in _user_context_processor
+    return dict(current_user=_get_user())
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py", line 16, in load_user
+    return User.query.get(user_id)
+  File "<string>", line 2, in get
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 383, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 1130, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+    return self.session._get_impl(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3657, in _get_impl
+    return db_load_fn(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+    session.execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2229, in execute
+    return self._execute_internal(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2112, in _execute_internal
+    bind = self.get_bind(**bind_arguments)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_sqlalchemy/session.py", line 53, in get_bind
+    engines = self._db.engines
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 639, in engines
+    raise RuntimeError(
+RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+2023-03-01 16:37:57 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py", line 23, in index
+    return render_template("index.html")
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 128, in _render
+    app.update_template_context(context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 994, in update_template_context
+    context.update(func())
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/utils.py", line 407, in _user_context_processor
+    return dict(current_user=_get_user())
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py", line 16, in load_user
+    return User.query.get(user_id)
+  File "<string>", line 2, in get
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py", line 383, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 1130, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 1139, in _get_impl
+    return self.session._get_impl(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3657, in _get_impl
+    return db_load_fn(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/loading.py", line 666, in load_on_pk_identity
+    session.execute(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2229, in execute
+    return self._execute_internal(
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2112, in _execute_internal
+    bind = self.get_bind(**bind_arguments)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_sqlalchemy/session.py", line 53, in get_bind
+    engines = self._db.engines
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 639, in engines
+    raise RuntimeError(
+RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+2023-03-01 16:39:06 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 16:39:06 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 16:39:06 - INFO -  * Restarting with stat
+2023-03-01 16:39:06 - WARNING -  * Debugger is active!
+2023-03-01 16:39:06 - INFO -  * Debugger PIN: 136-091-870
+2023-03-01 16:39:11 - INFO - 127.0.0.1 - - [01/Mar/2023 16:39:11] "GET / HTTP/1.1" 200 -
+2023-03-01 16:39:11 - INFO - 127.0.0.1 - - [01/Mar/2023 16:39:11] "GET /static/images/BikeRepair.png HTTP/1.1" 200 -
+2023-03-01 16:39:13 - INFO - 127.0.0.1 - - [01/Mar/2023 16:39:13] "GET / HTTP/1.1" 200 -
+2023-03-01 16:39:13 - INFO - 127.0.0.1 - - [01/Mar/2023 16:39:13] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-01 16:39:14 - INFO - 127.0.0.1 - - [01/Mar/2023 16:39:14] "GET /login HTTP/1.1" 200 -
+2023-03-01 16:39:14 - INFO - 127.0.0.1 - - [01/Mar/2023 16:39:14] "GET /signup HTTP/1.1" 200 -
+2023-03-01 16:39:15 - INFO - 127.0.0.1 - - [01/Mar/2023 16:39:15] "GET / HTTP/1.1" 200 -
+2023-03-01 16:39:15 - INFO - 127.0.0.1 - - [01/Mar/2023 16:39:15] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-01 16:43:00 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 16:43:00 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 16:43:00 - INFO -  * Restarting with stat
+2023-03-01 16:43:01 - WARNING -  * Debugger is active!
+2023-03-01 16:43:01 - INFO -  * Debugger PIN: 136-091-870
+2023-03-01 16:43:03 - INFO - 127.0.0.1 - - [01/Mar/2023 16:43:03] "GET / HTTP/1.1" 200 -
+2023-03-01 16:43:03 - INFO - 127.0.0.1 - - [01/Mar/2023 16:43:03] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-01 16:43:19 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 16:43:19 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 16:43:19 - INFO -  * Restarting with stat
+2023-03-01 16:43:24 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 16:43:24 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 16:43:24 - INFO -  * Restarting with stat
+2023-03-01 16:46:18 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 16:46:18 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 16:46:18 - INFO -  * Restarting with stat
+2023-03-01 16:46:19 - WARNING -  * Debugger is active!
+2023-03-01 16:46:19 - INFO -  * Debugger PIN: 136-091-870
+2023-03-01 16:46:22 - INFO - 127.0.0.1 - - [01/Mar/2023 16:46:22] "GET / HTTP/1.1" 200 -
+2023-03-01 16:46:22 - INFO - 127.0.0.1 - - [01/Mar/2023 16:46:22] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-01 16:46:36 - INFO - 127.0.0.1 - - [01/Mar/2023 16:46:36] "GET /signup HTTP/1.1" 200 -
+2023-03-01 16:46:38 - INFO - 127.0.0.1 - - [01/Mar/2023 16:46:38] "GET / HTTP/1.1" 200 -
+2023-03-01 16:46:38 - INFO - 127.0.0.1 - - [01/Mar/2023 16:46:38] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-01 16:46:46 - INFO - 127.0.0.1 - - [01/Mar/2023 16:46:46] "GET / HTTP/1.1" 200 -
+2023-03-01 16:46:46 - INFO - 127.0.0.1 - - [01/Mar/2023 16:46:46] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-01 16:46:49 - INFO - 127.0.0.1 - - [01/Mar/2023 16:46:49] "GET /login HTTP/1.1" 200 -
+2023-03-01 22:49:53 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 22:49:53 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 22:49:53 - INFO -  * Restarting with stat
+2023-03-01 22:49:53 - WARNING -  * Debugger is active!
+2023-03-01 22:49:53 - INFO -  * Debugger PIN: 136-091-870
+2023-03-01 22:49:58 - INFO - 127.0.0.1 - - [01/Mar/2023 22:49:58] "GET / HTTP/1.1" 200 -
+2023-03-01 22:49:58 - INFO - 127.0.0.1 - - [01/Mar/2023 22:49:58] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-01 22:50:02 - INFO - 127.0.0.1 - - [01/Mar/2023 22:50:02] "GET /login HTTP/1.1" 200 -
+2023-03-01 22:50:04 - INFO - 127.0.0.1 - - [01/Mar/2023 22:50:04] "GET /signup HTTP/1.1" 200 -
+2023-03-01 22:50:12 - INFO - 127.0.0.1 - - [01/Mar/2023 22:50:12] "GET /login HTTP/1.1" 200 -
+2023-03-01 22:50:18 - INFO - 127.0.0.1 - - [01/Mar/2023 22:50:18] "POST /login HTTP/1.1" 200 -
+2023-03-01 22:50:20 - INFO - 127.0.0.1 - - [01/Mar/2023 22:50:20] "GET /signup HTTP/1.1" 200 -
+2023-03-01 22:50:36 - INFO - 127.0.0.1 - - [01/Mar/2023 22:50:36] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2023-03-01 22:50:36 - INFO - 127.0.0.1 - - [01/Mar/2023 22:50:36] "[36mGET /signup?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-03-01 22:50:36 - INFO - 127.0.0.1 - - [01/Mar/2023 22:50:36] "[36mGET /signup?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-03-01 22:50:36 - INFO - 127.0.0.1 - - [01/Mar/2023 22:50:36] "[36mGET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-01 22:50:36 - INFO - 127.0.0.1 - - [01/Mar/2023 22:50:36] "[36mGET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-01 22:52:03 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 22:52:03 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 22:52:03 - INFO -  * Restarting with stat
+2023-03-01 22:52:03 - WARNING -  * Debugger is active!
+2023-03-01 22:52:03 - INFO -  * Debugger PIN: 136-091-870
+2023-03-01 22:52:07 - INFO - 127.0.0.1 - - [01/Mar/2023 22:52:07] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2023-03-01 22:52:07 - INFO - 127.0.0.1 - - [01/Mar/2023 22:52:07] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-03-01 22:52:07 - INFO - 127.0.0.1 - - [01/Mar/2023 22:52:07] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-03-01 22:52:07 - INFO - 127.0.0.1 - - [01/Mar/2023 22:52:07] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-01 22:52:07 - INFO - 127.0.0.1 - - [01/Mar/2023 22:52:07] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-01 22:52:24 - INFO - 127.0.0.1 - - [01/Mar/2023 22:52:24] "POST /signup HTTP/1.1" 200 -
+2023-03-01 22:52:37 - INFO - 127.0.0.1 - - [01/Mar/2023 22:52:37] "GET /login HTTP/1.1" 200 -
+2023-03-01 22:52:43 - INFO - 127.0.0.1 - - [01/Mar/2023 22:52:43] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2023-03-01 22:52:43 - INFO - 127.0.0.1 - - [01/Mar/2023 22:52:43] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-03-01 22:52:43 - INFO - 127.0.0.1 - - [01/Mar/2023 22:52:43] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-03-01 22:52:43 - INFO - 127.0.0.1 - - [01/Mar/2023 22:52:43] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-01 22:52:43 - INFO - 127.0.0.1 - - [01/Mar/2023 22:52:43] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-01 22:56:03 - INFO -  * Detected change in '/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py', reloading
+2023-03-01 22:56:03 - INFO -  * Restarting with stat
+2023-03-01 22:56:03 - WARNING -  * Debugger is active!
+2023-03-01 22:56:03 - INFO -  * Debugger PIN: 136-091-870
+2023-03-01 22:56:51 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 22:56:51 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 22:56:51 - INFO -  * Restarting with stat
+2023-03-01 22:56:52 - WARNING -  * Debugger is active!
+2023-03-01 22:56:52 - INFO -  * Debugger PIN: 136-091-870
+2023-03-01 22:56:57 - INFO - 127.0.0.1 - - [01/Mar/2023 22:56:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-03-01 22:56:57 - INFO - 127.0.0.1 - - [01/Mar/2023 22:56:57] "[35m[1mGET /admin_account HTTP/1.1[0m" 500 -
+2023-03-01 22:56:57 - INFO - 127.0.0.1 - - [01/Mar/2023 22:56:57] "[36mGET /admin_account?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-03-01 22:56:57 - INFO - 127.0.0.1 - - [01/Mar/2023 22:56:57] "[36mGET /admin_account?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-03-01 22:56:58 - INFO - 127.0.0.1 - - [01/Mar/2023 22:56:58] "[36mGET /admin_account?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-01 22:56:58 - INFO - 127.0.0.1 - - [01/Mar/2023 22:56:58] "[36mGET /admin_account?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-01 22:57:26 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 22:57:26 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 22:57:26 - INFO -  * Restarting with stat
+2023-03-01 22:57:26 - WARNING -  * Debugger is active!
+2023-03-01 22:57:26 - INFO -  * Debugger PIN: 136-091-870
+2023-03-01 22:57:30 - INFO - 127.0.0.1 - - [01/Mar/2023 22:57:30] "GET /login HTTP/1.1" 200 -
+2023-03-01 22:57:35 - INFO - 127.0.0.1 - - [01/Mar/2023 22:57:35] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-03-01 22:57:35 - INFO - 127.0.0.1 - - [01/Mar/2023 22:57:35] "[35m[1mGET /admin_account HTTP/1.1[0m" 500 -
+2023-03-01 22:57:35 - INFO - 127.0.0.1 - - [01/Mar/2023 22:57:35] "[36mGET /admin_account?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-03-01 22:57:35 - INFO - 127.0.0.1 - - [01/Mar/2023 22:57:35] "[36mGET /admin_account?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-03-01 22:57:35 - INFO - 127.0.0.1 - - [01/Mar/2023 22:57:35] "[36mGET /admin_account?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-01 22:59:35 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 22:59:35 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 22:59:35 - INFO -  * Restarting with stat
+2023-03-01 22:59:36 - WARNING -  * Debugger is active!
+2023-03-01 22:59:36 - INFO -  * Debugger PIN: 136-091-870
+2023-03-01 22:59:40 - INFO - 127.0.0.1 - - [01/Mar/2023 22:59:40] "GET /login HTTP/1.1" 200 -
+2023-03-01 22:59:44 - INFO - 127.0.0.1 - - [01/Mar/2023 22:59:44] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-03-01 22:59:44 - INFO - 127.0.0.1 - - [01/Mar/2023 22:59:44] "GET /admin_account HTTP/1.1" 200 -
+2023-03-01 22:59:49 - INFO - 127.0.0.1 - - [01/Mar/2023 22:59:49] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-03-01 22:59:49 - INFO - 127.0.0.1 - - [01/Mar/2023 22:59:49] "GET /login HTTP/1.1" 200 -
+2023-03-01 22:59:50 - INFO - 127.0.0.1 - - [01/Mar/2023 22:59:50] "GET / HTTP/1.1" 200 -
+2023-03-01 22:59:50 - INFO - 127.0.0.1 - - [01/Mar/2023 22:59:50] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-01 22:59:51 - INFO - 127.0.0.1 - - [01/Mar/2023 22:59:51] "GET /login HTTP/1.1" 200 -
+2023-03-01 22:59:55 - INFO - 127.0.0.1 - - [01/Mar/2023 22:59:55] "GET /signup HTTP/1.1" 200 -
+2023-03-01 23:00:10 - INFO - 127.0.0.1 - - [01/Mar/2023 23:00:10] "[32mPOST /signup HTTP/1.1[0m" 302 -
+2023-03-01 23:00:10 - INFO - 127.0.0.1 - - [01/Mar/2023 23:00:10] "GET /login HTTP/1.1" 200 -
+2023-03-01 23:00:18 - INFO - 127.0.0.1 - - [01/Mar/2023 23:00:18] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-03-01 23:00:18 - INFO - 127.0.0.1 - - [01/Mar/2023 23:00:18] "[35m[1mGET /user_account/bob HTTP/1.1[0m" 500 -
+2023-03-01 23:00:18 - INFO - 127.0.0.1 - - [01/Mar/2023 23:00:18] "[36mGET /user_account/bob?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-03-01 23:00:18 - INFO - 127.0.0.1 - - [01/Mar/2023 23:00:18] "[36mGET /user_account/bob?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-03-01 23:00:18 - INFO - 127.0.0.1 - - [01/Mar/2023 23:00:18] "[36mGET /user_account/bob?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-01 23:00:18 - INFO - 127.0.0.1 - - [01/Mar/2023 23:00:18] "[36mGET /user_account/bob?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-01 23:01:12 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 23:01:12 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 23:01:12 - INFO -  * Restarting with stat
+2023-03-01 23:01:12 - WARNING -  * Debugger is active!
+2023-03-01 23:01:12 - INFO -  * Debugger PIN: 136-091-870
+2023-03-01 23:01:15 - INFO - 127.0.0.1 - - [01/Mar/2023 23:01:15] "GET /login HTTP/1.1" 200 -
+2023-03-01 23:01:19 - INFO - 127.0.0.1 - - [01/Mar/2023 23:01:19] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-03-01 23:01:19 - INFO - 127.0.0.1 - - [01/Mar/2023 23:01:19] "GET /user_account/bob HTTP/1.1" 200 -
+2023-03-01 23:01:26 - INFO - 127.0.0.1 - - [01/Mar/2023 23:01:26] "[35m[1mPOST /user_account/bob HTTP/1.1[0m" 500 -
+2023-03-01 23:01:26 - INFO - 127.0.0.1 - - [01/Mar/2023 23:01:26] "[36mGET /user_account/bob?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-03-01 23:01:26 - INFO - 127.0.0.1 - - [01/Mar/2023 23:01:26] "[36mGET /user_account/bob?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-03-01 23:01:26 - INFO - 127.0.0.1 - - [01/Mar/2023 23:01:26] "[36mGET /user_account/bob?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-01 23:01:26 - INFO - 127.0.0.1 - - [01/Mar/2023 23:01:26] "[36mGET /user_account/bob?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-01 23:03:14 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 23:03:14 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 23:03:14 - INFO -  * Restarting with stat
+2023-03-01 23:03:39 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 23:03:39 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 23:03:39 - INFO -  * Restarting with stat
+2023-03-01 23:03:39 - WARNING -  * Debugger is active!
+2023-03-01 23:03:39 - INFO -  * Debugger PIN: 136-091-870
+2023-03-01 23:03:41 - INFO - 127.0.0.1 - - [01/Mar/2023 23:03:41] "GET /login HTTP/1.1" 200 -
+2023-03-01 23:03:46 - INFO - 127.0.0.1 - - [01/Mar/2023 23:03:46] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-03-01 23:03:46 - INFO - 127.0.0.1 - - [01/Mar/2023 23:03:46] "GET /user_account/bob HTTP/1.1" 200 -
+2023-03-01 23:03:51 - INFO - 127.0.0.1 - - [01/Mar/2023 23:03:51] "POST /user_account/bob HTTP/1.1" 200 -
+2023-03-01 23:04:06 - INFO - 127.0.0.1 - - [01/Mar/2023 23:04:06] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-03-01 23:04:06 - INFO - 127.0.0.1 - - [01/Mar/2023 23:04:06] "GET /login HTTP/1.1" 200 -
+2023-03-01 23:04:11 - INFO - 127.0.0.1 - - [01/Mar/2023 23:04:11] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-03-01 23:04:11 - INFO - 127.0.0.1 - - [01/Mar/2023 23:04:11] "GET /admin_account HTTP/1.1" 200 -
+2023-03-01 23:04:19 - INFO - 127.0.0.1 - - [01/Mar/2023 23:04:19] "POST /admin_account HTTP/1.1" 200 -
+2023-03-01 23:04:20 - INFO - 127.0.0.1 - - [01/Mar/2023 23:04:20] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-03-01 23:04:20 - INFO - 127.0.0.1 - - [01/Mar/2023 23:04:20] "GET /login HTTP/1.1" 200 -
+2023-03-01 23:04:31 - INFO - 127.0.0.1 - - [01/Mar/2023 23:04:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-03-01 23:04:31 - INFO - 127.0.0.1 - - [01/Mar/2023 23:04:31] "GET /user_account/bob HTTP/1.1" 200 -
+2023-03-01 23:04:38 - INFO - 127.0.0.1 - - [01/Mar/2023 23:04:38] "POST /user_account/bob HTTP/1.1" 200 -
+2023-03-01 23:05:39 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py", line 25, in index
+    return render_template("index.html")
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/templates/index.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/templates/base.html", line 16, in top-level template code
+    {%block nav%}
+  File "/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/templates/index.html", line 12, in block 'nav'
+    <a class="nav-link fw-bold py-1 px-2" href="{{url_for('logout')}}">Log out</a>
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 2031, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/flask/app.py", line 2020, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/werkzeug/routing/map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'logout'. Did you mean 'bp.logout' instead?

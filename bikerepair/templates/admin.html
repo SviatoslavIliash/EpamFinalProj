@@ -2,7 +2,7 @@
 
 {% block title%}Admin Account{% endblock%}
 
-{%block nav%}<a class="nav-link fw-bold py-1 px-2" href="{{url_for('logout')}}">Log out</a>{% endblock %}
+{%block nav%}<a class="nav-link fw-bold py-1 px-2" href="{{url_for('bp.logout')}}">Log out</a>{% endblock %}
 
 {% block body%}
   <h1 style="font-size:200%">Welcome, Admin</h1><br>
@@ -29,7 +29,7 @@
         <th>Confirmation</th>
     </thead>
 {% for order in total_user_orders(user.login) %}
-<tr><form method="post", action="{{url_for('admin')}}">
+<tr><form method="post", action="{{url_for('bp.admin')}}">
   <td>{{ order.id }}</td>
   <td>{{ order.services }}</td>
   <td>{{ order.total_price }}</td>
@@ -53,7 +53,7 @@
 {% endfor %}
 <br><br><br>
 <p style="font-size:150%">Find orders:</p>
-<form method="post" action="{{url_for('admin')}}">
+<form method="post" action="{{url_for('bp.admin')}}">
   <label for="order_date_first">Between this date:</label>
   <input type="date" id="order_date_first" name="order_date_first">
   <label for="order_date_second">And this date:</label>

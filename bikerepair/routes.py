@@ -1,34 +1,15 @@
 from re import match
-import logging
 
-from flask import render_template, url_for, request, flash, redirect
+from flask import render_template, url_for, request, flash, redirect, Blueprint
 from werkzeug.security import check_password_hash, generate_password_hash
-from flask_login import login_user, LoginManager, login_required, current_user, logout_user
+from flask_login import login_user, login_required, current_user, logout_user
 from sqlalchemy import desc
 
+bp = Blueprint('bp', __name__)
 
-from bikerepair import app, db
+from bikerepair import db, login_manager
 from bikerepair.models import User, Order, OrderItem, Service
 
-
-# create root logger
-logger = logging.getLogger()
-logFormatter = logging.Formatter(
-    "%(asctime)s - %(levelname)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
-# add console handler to the root logger
-consoleHandler = logging.StreamHandler()
-consoleHandler.setFormatter(logFormatter)
-logger.addHandler(consoleHandler)
-
-# add file handler to the root logger
-fileHandler = logging.FileHandler('bikerepair.log')
-fileHandler.setFormatter(logFormatter)
-logger.addHandler(fileHandler)
-
-# create Flask login manager
-login_manager = LoginManager()
-login_manager.init_app(app)
-login_manager.login_view = 'login'
 
 
 # configure login_manager
@@ -38,14 +19,14 @@ def load_user(user_id):
 
 
 # route for home page
-@app.route('/', methods=['GET'])
-@app.route('/home', methods=['GET'])
+@bp.route('/', methods=['GET'])
+@bp.route('/home', methods=['GET'])
 def index():
     return render_template("index.html")
 
 
 # route for login page
-@app.route('/login', methods=['GET', 'POST'])
+@bp.route('/login', methods=['GET', 'POST'])
 def login():
     login = request.form.get('login')
     password = request.form.get('password')
@@ -56,7 +37,7 @@ def login():
             if user and check_password_hash(user.password, password):
                 login_user(user)
 
-                next = url_for('user', name=login)
+                next = url_for('bp.user', name=login)
                 if login == 'admin':
                     next = '/admin_account'
                 return redirect(next)
@@ -69,16 +50,16 @@ def login():
 
 
 # route for logout function
-@app.route('/logout', methods=['GET', 'POST'])
+@bp.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
     logout_user()
     flash("You have been logged out, my friend!")
-    return redirect(url_for('login'))
+    return redirect(url_for('bp.login'))
 
 
 # route for signup page
-@app.route('/signup', methods=['GET', 'POST'])
+@bp.route('/signup', methods=['GET', 'POST'])
 def signup():
     login = request.form.get('login')
     password = request.form.get('password')
@@ -99,7 +80,7 @@ def signup():
                 db.session.add(new_user)
                 db.session.commit()
 
-            return redirect(url_for('login'))
+            return redirect(url_for('bp.login'))
         else:
             flash('Login must be 3-40 length and contents only letters, numbers, underscore!')
     return render_template("signup.html")
@@ -110,9 +91,9 @@ def total_user_orders(name):
     user_orders = Order.query.filter_by(login=name).order_by(desc(Order.date))
     total_orders = []
 
-    for o in user_orders:
-        current_order = Order(id=o.id, status=o.status, date=o.date)
-        order_items = OrderItem.query.filter_by(order_id=o.id)
+    for user_order in user_orders:
+        current_order = Order(id=user_order.id, status=user_order.status, date=user_order.date)
+        order_items = OrderItem.query.filter_by(order_id=user_order.id)
         services = []
         for item in order_items:
             services.append(item.serv_name)
@@ -123,7 +104,7 @@ def total_user_orders(name):
 
 
 # route for user account
-@app.route('/user_account/<string:name>', methods=['GET', 'POST'])
+@bp.route('/user_account/<string:name>', methods=['GET', 'POST'])
 @login_required
 def user(name):
     serv1 = request.form.get('wash')
@@ -151,11 +132,11 @@ def user(name):
         return render_template('user_account.html', name=name, user_orders=total_user_orders(name))
     else:
         flash('Log in required!!!')
-        return redirect(url_for('login'))
+        return redirect(url_for('bp.login'))
 
 
 # route for admin account
-@app.route('/admin_account', methods=['GET', 'POST'])
+@bp.route('/admin_account', methods=['GET', 'POST'])
 @login_required
 def admin():
     current_status = request.form.get('current_status')
@@ -182,7 +163,10 @@ def admin():
             order_date_first, order_date_second))
 
     if current_user.login == 'admin':
-        return render_template('admin.html', users=users, total_user_orders=total_user_orders, filter_orders=filter_orders)
+        return render_template('admin.html',
+                               users=users,
+                               total_user_orders=total_user_orders,
+                               filter_orders=filter_orders)
     else:
         flash('Log in required!!!')
-        return redirect(url_for('login'))
+        return redirect(url_for('bp.login'))
