@@ -9,3 +9,6 @@ ___
 5. Run application from consol `python app.py run`
 ## Author
 **Sviatoslav Iliash**
+
+## Coveralls
+[![Coverage Status](https://coveralls.io/repos/github/SviatoslavIliash/EpamFinalProj/badge.svg?branch=master)](https://coveralls.io/github/SviatoslavIliash/EpamFinalProj?branch=master)
