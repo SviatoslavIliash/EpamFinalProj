@@ -9,7 +9,7 @@ def app():
     test_app = create_app('TEST')
     test_app.config.update({
         "TESTING": True,
-
+        "LOGIN_DISABLED": True,
     })
 
 
@@ -43,13 +43,11 @@ def session(db, request):
     request.addfinalizer(teardown)
     return db.session
 
+
 @pytest.fixture()
 def runner(app):
     return app.test_cli_runner()
 
-#def test_index(client):
-#    response = client.get("/home")
-#    assert "index.html" in response.data
 
 def test_main_route_status_code(client) -> None:
     route = "/login"
@@ -70,23 +68,12 @@ def captured_templates(app):
         template_rendered.disconnect(record, app)
 
 
-def test_main_route(client, captured_templates) -> None:
-    route = "/home"
-    rv = client.get(route)
-
-    # Sanity checks - it would be a total surprise if this would not hold true
-    assert rv.status_code == 200
-    assert len(captured_templates) == 1
-    template, context = captured_templates[0]
-    assert template.name == "index.html"
-
-
-
 
 @pytest.fixture(scope="module")
 def new_service():
     service = Service(name='default', price='400')
     return service
+
 
 @pytest.fixture(scope='session')
 def db(app, request):

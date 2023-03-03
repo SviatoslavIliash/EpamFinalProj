@@ -855,3 +855,47 @@ Traceback (most recent call last):
   File "/Users/mac/PycharmProjects/EpamFinalProject/venv/lib/python3.10/site-packages/werkzeug/routing/map.py", line 917, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'logout'. Did you mean 'bp.logout' instead?
+2023-03-02 19:51:45 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-02 19:51:45 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-02 19:51:45 - INFO -  * Restarting with stat
+2023-03-02 19:51:45 - WARNING -  * Debugger is active!
+2023-03-02 19:51:45 - INFO -  * Debugger PIN: 136-091-870
+2023-03-02 19:51:48 - INFO - 127.0.0.1 - - [02/Mar/2023 19:51:48] "GET / HTTP/1.1" 200 -
+2023-03-02 19:51:48 - INFO - 127.0.0.1 - - [02/Mar/2023 19:51:48] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-02 19:51:51 - INFO - 127.0.0.1 - - [02/Mar/2023 19:51:51] "GET /signup HTTP/1.1" 200 -
+2023-03-02 19:52:08 - INFO - 127.0.0.1 - - [02/Mar/2023 19:52:08] "[32mPOST /signup HTTP/1.1[0m" 302 -
+2023-03-02 19:52:09 - INFO - 127.0.0.1 - - [02/Mar/2023 19:52:09] "GET /login HTTP/1.1" 200 -
+2023-03-02 19:52:22 - INFO - 127.0.0.1 - - [02/Mar/2023 19:52:22] "GET /signup HTTP/1.1" 200 -
+2023-03-02 19:53:14 - INFO -  * Detected change in '/Users/mac/PycharmProjects/EpamFinalProject/bikerepair/routes.py', reloading
+2023-03-02 19:53:14 - INFO -  * Restarting with stat
+2023-03-02 19:53:14 - WARNING -  * Debugger is active!
+2023-03-02 19:53:15 - INFO -  * Debugger PIN: 136-091-870
+2023-03-02 19:53:15 - INFO - 127.0.0.1 - - [02/Mar/2023 19:53:15] "POST /signup HTTP/1.1" 200 -
+2023-03-02 19:53:37 - INFO - 127.0.0.1 - - [02/Mar/2023 19:53:37] "[32mPOST /signup HTTP/1.1[0m" 302 -
+2023-03-02 19:53:37 - INFO - 127.0.0.1 - - [02/Mar/2023 19:53:37] "GET /login HTTP/1.1" 200 -
+2023-03-02 19:53:51 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-02 19:53:51 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-02 19:53:51 - INFO -  * Restarting with stat
+2023-03-02 19:53:52 - WARNING -  * Debugger is active!
+2023-03-02 19:53:52 - INFO -  * Debugger PIN: 136-091-870
+2023-03-02 19:53:55 - INFO - 127.0.0.1 - - [02/Mar/2023 19:53:55] "GET /login HTTP/1.1" 200 -
+2023-03-02 19:53:57 - INFO - 127.0.0.1 - - [02/Mar/2023 19:53:57] "GET /signup HTTP/1.1" 200 -
+2023-03-02 19:53:59 - INFO - 127.0.0.1 - - [02/Mar/2023 19:53:59] "POST /signup HTTP/1.1" 200 -
+2023-03-02 19:54:03 - INFO - 127.0.0.1 - - [02/Mar/2023 19:54:03] "POST /signup HTTP/1.1" 200 -
+2023-03-02 19:54:10 - INFO - 127.0.0.1 - - [02/Mar/2023 19:54:10] "[32mPOST /signup HTTP/1.1[0m" 302 -
+2023-03-02 19:54:10 - INFO - 127.0.0.1 - - [02/Mar/2023 19:54:10] "GET /login HTTP/1.1" 200 -
+2023-03-02 19:54:23 - INFO - 127.0.0.1 - - [02/Mar/2023 19:54:23] "GET /signup HTTP/1.1" 200 -
+2023-03-02 19:54:36 - INFO - 127.0.0.1 - - [02/Mar/2023 19:54:36] "POST /signup HTTP/1.1" 200 -
+2023-03-03 18:25:24 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-03 18:25:24 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-03 18:25:24 - INFO -  * Restarting with stat
+2023-03-03 18:25:25 - WARNING -  * Debugger is active!
+2023-03-03 18:25:25 - INFO -  * Debugger PIN: 136-091-870
+2023-03-03 18:25:26 - INFO - 127.0.0.1 - - [03/Mar/2023 18:25:26] "GET / HTTP/1.1" 200 -
+2023-03-03 18:25:27 - INFO - 127.0.0.1 - - [03/Mar/2023 18:25:27] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-03 18:25:32 - INFO - 127.0.0.1 - - [03/Mar/2023 18:25:32] "GET /login HTTP/1.1" 200 -
+2023-03-03 18:25:38 - INFO - 127.0.0.1 - - [03/Mar/2023 18:25:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-03-03 18:25:39 - INFO - 127.0.0.1 - - [03/Mar/2023 18:25:39] "GET /user_account/bob HTTP/1.1" 200 -

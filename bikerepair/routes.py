@@ -11,7 +11,6 @@ from bikerepair import db, login_manager
 from bikerepair.models import User, Order, OrderItem, Service
 
 
-
 # configure login_manager
 @login_manager.user_loader
 def load_user(user_id):
@@ -50,7 +49,7 @@ def login():
 
 
 # route for logout function
-@bp.route('/logout', methods=['GET', 'POST'])
+@bp.route('/logout')#, methods=['GET', 'POST'])
 @login_required
 def logout():
     logout_user()
@@ -72,8 +71,10 @@ def signup():
         if match(r"^[a-zA-Z0-9_]{3,40}$", login):
             if not (login.strip() and password and password2 and email.strip()):
                 flash('Please, fill all fields!')
+                return render_template("signup.html")
             elif password != password2:
                 flash('Passwords are not equal!')
+                return render_template("signup.html")
             else:
                 hash_pwd = generate_password_hash(password)
                 new_user = User(login=login, password=hash_pwd, email=email)
