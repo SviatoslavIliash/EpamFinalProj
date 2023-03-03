@@ -7,4 +7,6 @@ before_install:
   - python -m pip install --upgrade pip
 script:
   - python -m pytest -v tests/conftest.py
-
+  - py.test coveralls/tests.py --doctest-modules --pep8 coveralls -v --cov coveralls --cov-report term-missing
+after_success:
+  - coveralls
