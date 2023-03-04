@@ -899,3 +899,32 @@ werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'logout
 2023-03-03 18:25:32 - INFO - 127.0.0.1 - - [03/Mar/2023 18:25:32] "GET /login HTTP/1.1" 200 -
 2023-03-03 18:25:38 - INFO - 127.0.0.1 - - [03/Mar/2023 18:25:38] "[32mPOST /login HTTP/1.1[0m" 302 -
 2023-03-03 18:25:39 - INFO - 127.0.0.1 - - [03/Mar/2023 18:25:39] "GET /user_account/bob HTTP/1.1" 200 -
+2023-03-04 17:01:18 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-04 17:01:18 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-04 17:01:18 - INFO -  * Restarting with stat
+2023-03-04 17:01:18 - WARNING -  * Debugger is active!
+2023-03-04 17:01:18 - INFO -  * Debugger PIN: 136-091-870
+2023-03-04 17:01:33 - INFO - 127.0.0.1 - - [04/Mar/2023 17:01:33] "GET / HTTP/1.1" 200 -
+2023-03-04 17:01:33 - INFO - 127.0.0.1 - - [04/Mar/2023 17:01:33] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-04 17:01:34 - INFO - 127.0.0.1 - - [04/Mar/2023 17:01:34] "GET /user_account/bob HTTP/1.1" 200 -
+2023-03-04 17:01:36 - INFO - 127.0.0.1 - - [04/Mar/2023 17:01:36] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-03-04 17:01:36 - INFO - 127.0.0.1 - - [04/Mar/2023 17:01:36] "GET /login HTTP/1.1" 200 -
+2023-03-04 17:01:40 - INFO - 127.0.0.1 - - [04/Mar/2023 17:01:40] "GET / HTTP/1.1" 200 -
+2023-03-04 17:01:40 - INFO - 127.0.0.1 - - [04/Mar/2023 17:01:40] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-04 17:01:41 - INFO - 127.0.0.1 - - [04/Mar/2023 17:01:41] "GET /login HTTP/1.1" 200 -
+2023-03-04 17:01:48 - INFO - 127.0.0.1 - - [04/Mar/2023 17:01:48] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-03-04 17:01:48 - INFO - 127.0.0.1 - - [04/Mar/2023 17:01:48] "GET /admin_account HTTP/1.1" 200 -
+2023-03-04 17:07:37 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-04 17:07:37 - INFO - [33mPress CTRL+C to quit[0m
+2023-03-04 17:07:37 - INFO -  * Restarting with stat
+2023-03-04 17:07:37 - WARNING -  * Debugger is active!
+2023-03-04 17:07:37 - INFO -  * Debugger PIN: 136-091-870
+2023-03-04 17:07:47 - INFO - 127.0.0.1 - - [04/Mar/2023 17:07:47] "GET / HTTP/1.1" 200 -
+2023-03-04 17:07:47 - INFO - 127.0.0.1 - - [04/Mar/2023 17:07:47] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-04 17:07:52 - INFO - 127.0.0.1 - - [04/Mar/2023 17:07:52] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-03-04 17:07:52 - INFO - 127.0.0.1 - - [04/Mar/2023 17:07:52] "GET /login HTTP/1.1" 200 -
+2023-03-04 17:07:53 - INFO - 127.0.0.1 - - [04/Mar/2023 17:07:53] "GET / HTTP/1.1" 200 -
+2023-03-04 17:07:53 - INFO - 127.0.0.1 - - [04/Mar/2023 17:07:53] "[36mGET /static/images/BikeRepair.png HTTP/1.1[0m" 304 -
+2023-03-04 17:07:55 - INFO - 127.0.0.1 - - [04/Mar/2023 17:07:55] "GET /login HTTP/1.1" 200 -

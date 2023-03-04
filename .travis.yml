@@ -6,7 +6,7 @@ python:
 before_install:
   - python -m pip install --upgrade pip
 script:
-  - python -m pytest -v tests/conftest.py
-  - py.test coveralls/tests.py --doctest-modules --pep8 coveralls -v --cov coveralls --cov-report term-missing
+  - python -m pytest -v tests/test_routes.py
 after_success:
-  - coveralls
+  - COVERALLS_REPO_TOKEN=PDxaAUfJIalmo6SIvTJgI9ch0eoNcBZAb coveralls
+
