@@ -10,5 +10,6 @@ ___
 ## Author
 **Sviatoslav Iliash**
 
-## Coveralls
+## Coveralls and Travis ci status
 [![Coverage Status](https://coveralls.io/repos/github/SviatoslavIliash/EpamFinalProj/badge.svg?branch=master)](https://coveralls.io/github/SviatoslavIliash/EpamFinalProj?branch=master)
+[![Build Status](https://app.travis-ci.com/SviatoslavIliash/EpamFinalProj.svg?branch=master)](https://app.travis-ci.com/SviatoslavIliash/EpamFinalProj)
