@@ -1,5 +1,6 @@
 import re
 
+import pytest
 from werkzeug.security import check_password_hash
 from bikerepair.models import User, Order, Service, OrderItem
 
@@ -154,7 +155,8 @@ def test_invalid_login_empty_field(client, session, captured_templates):
                      response.get_data(as_text=True))
 
 
-def test_logout(client, session, captured_templates):
+def test_logout( client, session, captured_templates):
+
     response = client.post("/login", data={
         "login": "bob",
         "password": "1234",

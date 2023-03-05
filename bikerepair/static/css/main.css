@@ -1,0 +1,9 @@
+.form-container {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container img {
+    width: 100%;
+    max-width: 1024px;
+}

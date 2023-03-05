@@ -49,7 +49,7 @@ def login():
 
 
 # route for logout function
-@bp.route('/logout')#, methods=['GET', 'POST'])
+@bp.route('/logout')  # methods=['GET', 'POST'])
 @login_required
 def logout():
     logout_user()
