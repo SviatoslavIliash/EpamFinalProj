@@ -8,5 +8,5 @@ before_install:
 script:
   - python -m pytest -v tests/test_routes.py
 after_success:
-  - COVERALLS_REPO_TOKEN=PDxaAUfJIalmo6SIvTJgI9ch0eoNcBZAb coveralls
+  - COVERALLS_REPO_TOKEN=muQpEeAA1v6UD6GjvsV1UtWoxWXpI8CNg coveralls
 

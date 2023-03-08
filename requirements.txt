@@ -10,6 +10,7 @@ dill==0.3.6
 docopt==0.6.2
 exceptiongroup==1.1.0
 Flask==2.2.2
+Flask-HTTPAuth==4.7.0
 Flask-Login==0.6.2
 Flask-SQLAlchemy==3.0.3
 greenlet==2.0.2
