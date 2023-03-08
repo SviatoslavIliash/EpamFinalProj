@@ -1,7 +1,8 @@
 import pytest
+
 from bikerepair import create_app, db as _db
 from flask import template_rendered
-from bikerepair.models import User, Service, Order, OrderItem
+from bikerepair.models.models import User, Service, Order, OrderItem
 
 
 @pytest.fixture(scope="session", autouse=True)

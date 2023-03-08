@@ -2,7 +2,7 @@ import re
 
 import pytest
 from werkzeug.security import check_password_hash
-from bikerepair.models import User, Order, Service, OrderItem
+from bikerepair.models.models import User, Order, Service, OrderItem
 
 
 def test_main_route(client, captured_templates) -> None:
@@ -80,7 +80,7 @@ def test_signup_not_allowed_login(client, session):
         "login": "bob@",  # NOT allowed character
         "password": "1234",
         "password2": "1234",
-        "email": "",
+        "email": "bob@bob.com",
     })
 
     assert response.status_code == 200
@@ -200,7 +200,8 @@ def test_order(session, db):
     assert order.login == "bob"
     assert order.date == "2023-03-01 23:04:38"
     assert order.status == "done"
-    assert order.__repr__() == f"<Order {order.id}>"
+    assert order.__repr__() == f'<Order id {order.id}|{order.login}|' \
+                               f'{order.date}|{order.status}>'
 
 
 def test_order_item(session, db):
@@ -209,5 +210,8 @@ def test_order_item(session, db):
     assert order.order_id == 4
     assert order.serv_name == "wash"
     assert order.price == 100
+
+
+
 
 

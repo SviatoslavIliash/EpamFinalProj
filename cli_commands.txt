@@ -1,0 +1,16 @@
+CURL_COMMAND FOR API:
+curl -d "@signup.json" -H "Content-Type: application/json" -X POST http://localhost:5000/api/signup;
+curl -u bob:1234 -d "@user_account.json" -H "Content-Type: application/json" -X POST http://localhost:5000/api/user_account/new_order;
+curl -u bob:1234 -X GET http://localhost:5000/api/user_account/user_orders;
+curl -u admin:1234 -X GET "http://localhost:5000/api/admin_account/filter_orders?date_first=2023-02-10&date_second=2023-03-09";
+curl -u admin:1234 -X GET http://localhost:5000/api/admin_account/user_names?got_orders=True;
+curl -u admin:1234 -X GET http://localhost:5000/api/admin_account/user_orders;
+curl -u admin:1234 -d "@crud_orders.json" -H "Content-Type: application/json" -X POST http://localhost:5000/api/admin_account/crud_orders;
+
+COVERAGE:
+coverage run --source=bikerepair -m pytest tests/
+coveralls
+
+GUNICORN:
+
+

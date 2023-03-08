@@ -50,7 +50,9 @@ class Order(db.Model):
     total_price = 0
 
     def __repr__(self):
-        return '<Order %r>' % self.id
+        if self.services == '' and self.total_price == 0:
+            return f'<Order id {self.id}|{self.login}|{self.date}|{self.status}>'
+        return f'<Order id {self.id}|{self.login}|{self.date}|{self.status}|{self.services}|{self.total_price}>'
 
 
 # Model for few services in one order

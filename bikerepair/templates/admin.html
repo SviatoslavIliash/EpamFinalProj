@@ -53,12 +53,12 @@
 {% endfor %}
 <br><br><br>
 <p style="font-size:150%">Find orders:</p>
-<form method="post" action="{{url_for('bp.admin')}}">
+<form method="get" action="{{url_for('bp.admin')}}">
   <label for="order_date_first">Between this date:</label>
   <input type="date" id="order_date_first" name="order_date_first">
   <label for="order_date_second">And this date:</label>
   <input type="date" id="order_date_second" name="order_date_second">
-  <input formmethod="post"  type="submit" value="Find" class="btn btn-warning">
+  <input formmethod="get"  type="submit" value="Find" class="btn btn-warning">
 </form>
 <style>
     .tableFixHead {overflow-y:auto; height: 200px; }

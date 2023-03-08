@@ -1,5 +1,5 @@
 from bikerepair import create_app, db
-from bikerepair.models import Service
+#from bikerepair.models import Service
 
 app = create_app('DEVELOP')
 #with app.app_context():

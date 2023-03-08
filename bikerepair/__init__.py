@@ -7,7 +7,6 @@ import logging
 from root_dir import ROOT_DIR
 
 
-
 # reading config file
 def read_config(section_name):
     config = configparser.ConfigParser()
@@ -30,6 +29,7 @@ def read_config(section_name):
             uri = f'sqlite:////{db_}'
     return uri
 
+
 # create root logger
 logger = logging.getLogger()
 logFormatter = logging.Formatter(
@@ -47,10 +47,13 @@ logger.addHandler(fileHandler)
 db = SQLAlchemy()
 login_manager = LoginManager()
 
+
 # creating Flask application
 def create_app(section_name):
     app = Flask(__name__)
-    from bikerepair.routes import bp
+    from bikerepair.views.routes import bp
+    from bikerepair.rest.api_routes import bp as bp_api
+    app.register_blueprint(bp_api)
     app.register_blueprint(bp)
     app.secret_key = 'some secret key'
     app.config['SQLALCHEMY_DATABASE_URI'] = read_config(section_name)
@@ -60,8 +63,9 @@ def create_app(section_name):
     # init Flask login manager
 
     login_manager.init_app(app)
-    login_manager.login_view = 'login'
+    login_manager.login_view = 'bp.login'
     return app
 
-from bikerepair import routes
+
+from bikerepair.views import routes
 
