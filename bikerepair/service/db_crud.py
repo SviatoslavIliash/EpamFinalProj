@@ -1,15 +1,19 @@
+"""Functions for checking user`s information
+and CRUD orders"""
 from re import match
+from typing import Optional
 
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import login_user
-from sqlalchemy import desc
+from sqlalchemy import desc, func
 
 from bikerepair import db
 from bikerepair.models.models import User, Order, OrderItem, Service
 
 
 # login user
-def check_login_user(login, password):
+def check_login_user(login, password) -> Optional[str]:
+    """Check if users login is correct"""
     if not (login.strip() and password):
         return 'Please fill login and password fields'
 
@@ -23,24 +27,31 @@ def check_login_user(login, password):
 
 
 # total_user_function using by two routes Admin and User
-def total_user_orders(name):
+def total_user_orders(name) -> list:
+    """Collecting full user`s order
+     and return list of all user`s orders"""
     user_orders = Order.query.filter_by(login=name).order_by(desc(Order.date))
     total_orders = []
 
     for user_order in user_orders:
-        current_order = Order(id=user_order.id, login=name, status=user_order.status, date=user_order.date)
+        current_order = Order(id=user_order.id, login=name,
+                              status=user_order.status, date=user_order.date)
         order_items = OrderItem.query.filter_by(order_id=user_order.id)
+        price_sum = db.session.query(func.sum(OrderItem.price).label("total")).\
+            filter_by(order_id=user_order.id).scalar()
         services = []
         for item in order_items:
             services.append(item.serv_name)
-            current_order.total_price += int(item.price)
+
         current_order.services = ", ".join(services)
+        current_order.total_price = price_sum
         total_orders.append(current_order)
     return total_orders
 
 
 # create user
-def create_user(login, password, password2, email):
+def create_user(login, password, password2, email) -> Optional[str]:
+    """Creating user and validate information"""
     if not (login.strip() and password and password2 and email.strip()):
         return 'Please, fill all fields!'
 
@@ -61,15 +72,16 @@ def create_user(login, password, password2, email):
 
 
 # Check if login is valid according to requirements
-def validate_login(login):
+def validate_login(login) -> bool:
+    """ Check if login is valid"""
     if match(r"^[a-zA-Z0-9_]{3,40}$", login):
         return True
-    else:
-        return False
+    return False
 
 
 # user order for user account
-def create_user_order(name, services):
+def create_user_order(name, services) -> Optional[str]:
+    """Create order and check if service exist"""
     service_choice = [serv for serv in services if serv is not None]
     if len(service_choice) == 0:
         return 'Choose service!'
@@ -89,6 +101,7 @@ def create_user_order(name, services):
 
 # filter orders for admin
 def date_filter_orders(first, second):
+    """Filter orders by date"""
     filter_orders = db.session.query(Order).filter(Order.date.between(
         first, second))
     return filter_orders
@@ -96,7 +109,7 @@ def date_filter_orders(first, second):
 
 # crud for orders in admin account
 def crud_status(current_status, change_status, delete_status, current_id):
-
+    """Change order status or delete order"""
     if delete_status:
         db.session.query(OrderItem).filter(OrderItem.order_id == current_id).delete()
         db.session.query(Order).filter(Order.id == current_id).delete()
@@ -106,4 +119,3 @@ def crud_status(current_status, change_status, delete_status, current_id):
             db.session.query(Order).filter(Order.id == current_id).update(
                     {Order.status: change_status})
             db.session.commit()
-    return None

@@ -1,22 +1,24 @@
+"""Tests for application routes"""
 import re
 
-import pytest
 from werkzeug.security import check_password_hash
 from bikerepair.models.models import User, Order, Service, OrderItem
 
 
 def test_main_route(client, captured_templates) -> None:
+    """Main route test"""
     route = "/home"
-    rv = client.get(route)
+    response = client.get(route)
 
     # Sanity checks - it would be a total surprise if this would not hold true
-    assert rv.status_code == 200
+    assert response.status_code == 200
     assert len(captured_templates) == 1
     template, context = captured_templates[0]
     assert template.name == "index.html"
 
 
 def test_signup(client, session):
+    """User sign up test"""
     response = client.post("/signup", data={
         "login": "admin",
         "password": "1234",
@@ -32,12 +34,14 @@ def test_signup(client, session):
 
 
 def test_duplicate_signup(client, session):
+    """Test for duplicate sign up"""
     response = client.post("/signup", data={
         "login": "admin",
         "password": "1234",
         "password2": "1234",
         "email": "admin@gmail.com",
     })
+    assert response.status_code == 302
     response1 = client.post("/signup", data={
         "login": "admin",
         "password": "1234",
@@ -46,14 +50,15 @@ def test_duplicate_signup(client, session):
     })
     assert response1.status_code == 200
     assert re.search('Such login exists. Choose another name!',
-                              response1.get_data(as_text=True))
+                     response1.get_data(as_text=True))
 
 
 def test_signup_pass_not_equal(client, session):
+    """Test for no equal passwords for sign up"""
     response = client.post("/signup", data={
         "login": "bob",
         "password": "1234",
-        "password2": "12345",   # Does NOT match!
+        "password2": "12345",  # Does NOT match!
         "email": "bob@gmail.com",
     })
 
@@ -63,6 +68,7 @@ def test_signup_pass_not_equal(client, session):
 
 
 def test_signup_not_fill(client, session):
+    """Test for blanc fields"""
     response = client.post("/signup", data={
         "login": "bob",
         "password": "1234",
@@ -76,6 +82,7 @@ def test_signup_not_fill(client, session):
 
 
 def test_signup_not_allowed_login(client, session):
+    """Test for invalid username for sing up"""
     response = client.post("/signup", data={
         "login": "bob@",  # NOT allowed character
         "password": "1234",
@@ -89,6 +96,7 @@ def test_signup_not_allowed_login(client, session):
 
 
 def test_invalid_login(client, session, captured_templates):
+    """Test for invalid username for login"""
     name = 'bob'
     response = client.post("/signup", data={
         "login": name,
@@ -115,6 +123,7 @@ def test_invalid_login(client, session, captured_templates):
 
 
 def test_login(client, session, captured_templates):
+    """Test for login route"""
     name = 'bob'
     response = client.post("/signup", data={
         "login": name,
@@ -141,7 +150,7 @@ def test_login(client, session, captured_templates):
 
 
 def test_invalid_login_empty_field(client, session, captured_templates):
-
+    """Test blanc fields for login route"""
     response = client.post("/login", data={
         "login": "",  # EMPTY field
         "password": "1234",
@@ -155,8 +164,8 @@ def test_invalid_login_empty_field(client, session, captured_templates):
                      response.get_data(as_text=True))
 
 
-def test_logout( client, session, captured_templates):
-
+def test_logout(client, session, captured_templates):
+    """Test for logout"""
     response = client.post("/login", data={
         "login": "bob",
         "password": "1234",
@@ -171,47 +180,3 @@ def test_logout( client, session, captured_templates):
     assert template.name == "login.html"
     assert re.search('You have been logged out, my friend!',
                      response1.get_data(as_text=True))
-
-
-def test_new_user():
-    user = User(login="bob", password="1234", email="bob@bob.com")
-    assert user.email == "bob@bob.com"
-    assert user.password == "1234"
-    assert user.__repr__() == "<User 'bob'>"
-    assert user.is_authenticated
-    assert user.is_active
-    assert not user.is_anonymous
-
-
-def test_service_default_table(session, db):
-    service = Service(name="wax", price=100)
-    session.commit()
-    assert service.name == "wax"
-    assert service.price == 100
-    Service.default_table(current_db=db)
-    default_service = session.query(Service)
-    result_services = [service for service in default_service]
-    assert len(result_services) == 4
-
-
-def test_order(session, db):
-    order = Order(login="bob", date="2023-03-01 23:04:38", status="done")
-    session.commit()
-    assert order.login == "bob"
-    assert order.date == "2023-03-01 23:04:38"
-    assert order.status == "done"
-    assert order.__repr__() == f'<Order id {order.id}|{order.login}|' \
-                               f'{order.date}|{order.status}>'
-
-
-def test_order_item(session, db):
-    order = OrderItem(order_id=4, serv_name="wash", price=100)
-    session.commit()
-    assert order.order_id == 4
-    assert order.serv_name == "wash"
-    assert order.price == 100
-
-
-
-
-

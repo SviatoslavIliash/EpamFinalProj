@@ -2,7 +2,7 @@ import pytest
 
 from bikerepair import create_app, db as _db
 from flask import template_rendered
-from bikerepair.models.models import User, Service, Order, OrderItem
+from bikerepair.models.models import Service
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -12,7 +12,6 @@ def app():
         "TESTING": True,
         "LOGIN_DISABLED": True,
     })
-
 
     # other setup can go here
     with test_app.app_context():
@@ -50,11 +49,6 @@ def runner(app):
     return app.test_cli_runner()
 
 
-def test_main_route_status_code(client) -> None:
-    route = "/login"
-    rv = client.get(route)
-    assert rv.status_code == 200
-
 @pytest.fixture
 def captured_templates(app):
     recorded = []
@@ -67,7 +61,6 @@ def captured_templates(app):
         yield recorded
     finally:
         template_rendered.disconnect(record, app)
-
 
 
 @pytest.fixture(scope="module")
@@ -84,5 +77,3 @@ def db(app, request):
     _db.create_all()
     request.addfinalizer(teardown)
     return _db
-
-

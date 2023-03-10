@@ -1,3 +1,4 @@
+alembic==1.10.2
 astroid==2.14.2
 attrs==22.2.0
 blinker==1.5
@@ -21,6 +22,7 @@ isort==5.12.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
 lazy-object-proxy==1.9.0
+Mako==1.2.4
 MarkupSafe==2.1.2
 mccabe==0.7.0
 mysql-connector-python==8.0.32

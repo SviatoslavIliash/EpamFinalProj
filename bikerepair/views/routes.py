@@ -1,3 +1,4 @@
+"""Flask routes for application"""
 from flask import render_template, url_for, request, flash, redirect, Blueprint
 from flask_login import login_required, current_user, logout_user
 
@@ -13,6 +14,7 @@ from bikerepair.models.models import User, Order
 # configure login_manager
 @login_manager.user_loader
 def load_user(user_id):
+    """Redefining load_user method for flask login"""
     return User.query.get(user_id)
 
 
@@ -20,12 +22,14 @@ def load_user(user_id):
 @bp.route('/', methods=['GET'])
 @bp.route('/home', methods=['GET'])
 def index():
+    """Route for main page"""
     return render_template("index.html")
 
 
 # route for login page
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
+    """Route for login page"""
     my_login = request.form.get('login')
     password = request.form.get('password')
     if request.method == 'POST':
@@ -43,6 +47,7 @@ def login():
 @bp.route('/logout')  # methods=['GET', 'POST'])
 @login_required
 def logout():
+    """Route for logout"""
     logout_user()
     flash("You have been logged out, my friend!")
     return redirect(url_for('bp.login'))
@@ -51,6 +56,7 @@ def logout():
 # route for signup page
 @bp.route('/signup', methods=['GET', 'POST'])
 def signup():
+    """Route for sign up page"""
     my_login = request.form.get('login')
     password = request.form.get('password')
     password2 = request.form.get('password2')
@@ -70,6 +76,7 @@ def signup():
 @bp.route('/user_account/<string:name>', methods=['GET', 'POST'])
 @login_required
 def user(name):
+    """Route for user account page"""
     serv1 = request.form.get('wash')
     serv2 = request.form.get('repair')
     serv3 = request.form.get('upgrade')
@@ -91,6 +98,7 @@ def user(name):
 @bp.route('/admin_account', methods=['GET', 'POST'])
 @login_required
 def admin():
+    """Route for admin account page"""
     current_status = request.form.get('current_status')
     change_status = request.form.get('status')
     delete_status = request.form.get('delete')

@@ -1,4 +1,4 @@
-# RESTfull for app
+"""RESTfull for app"""
 import json
 from flask import jsonify, request
 from flask_httpauth import HTTPBasicAuth
@@ -20,12 +20,13 @@ auth = HTTPBasicAuth()
 # configure login_manager
 @login_manager.user_loader
 def load_user(user_id):
+    """Redefining load_user method for flask login"""
     return User.query.get(user_id)
 
 
-# verify password
 @auth.verify_password
 def verify_password(my_login, password):
+    """Verify password"""
     response = check_login_user(login=my_login, password=password)
     if response is None:
         return True
