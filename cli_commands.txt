@@ -17,5 +17,9 @@ coverage report
 coveralls
 
 GUNICORN:
+gunicorn -c gunicorn.conf.py 'setup:app'
 
-ALEMBIC:
+MIGRATIONS:
+flask db init
+export FLASK_APP="bikerepair"  # if 'flask db init is not working'
+
