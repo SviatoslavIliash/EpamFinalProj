@@ -1,15 +1,19 @@
+"""Init file for application"""
 import os
+import configparser
+import logging
+
 from flask import Flask
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-import configparser
-import logging
+
 from root_dir import ROOT_DIR
 
 
 # reading config file
 def read_config(section_name):
+    """Reading config file"""
     config = configparser.ConfigParser()
     config.read(os.path.join(ROOT_DIR, 'bikerepair/config.ini'))
     db_type = config[section_name]['DBtype']
@@ -29,7 +33,6 @@ def read_config(section_name):
         else:
             uri = f'sqlite:////{db_}'
     return uri
-
 
 # create root logger
 logger = logging.getLogger()
@@ -52,6 +55,7 @@ login_manager = LoginManager()
 
 # creating Flask application
 def create_app(section_name='DEVELOP'):
+    """App factory"""
     app = Flask(__name__)
     from bikerepair.views.routes import bp
     from bikerepair.rest.api_routes import bp as bp_api

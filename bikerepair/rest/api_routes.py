@@ -1,5 +1,7 @@
-"""RESTfull for app"""
+"""RESTful for app"""
 import json
+
+import flask_migrate
 from flask import jsonify, request
 from flask_httpauth import HTTPBasicAuth
 
@@ -11,8 +13,8 @@ from bikerepair.service.db_crud import create_user, check_login_user, total_user
 
 bp = Blueprint('bp_api', __name__)
 
-from bikerepair import db, login_manager
-from bikerepair.models.models import User, Order
+from bikerepair import db, login_manager, migrate
+from bikerepair.models.models import User, Order, Service
 
 auth = HTTPBasicAuth()
 
@@ -22,6 +24,17 @@ auth = HTTPBasicAuth()
 def load_user(user_id):
     """Redefining load_user method for flask login"""
     return User.query.get(user_id)
+
+
+@bp.route('/api/create_db')
+def create_database():
+    """Creating database and default service table"""
+    try:
+        flask_migrate.upgrade()
+        Service.default_table(db)
+    except Exception:
+        return jsonify(message='Database was already created'), 500
+    return jsonify(message='Database successfully created'), 200
 
 
 @auth.verify_password

@@ -17,7 +17,7 @@ coverage report
 coveralls
 
 GUNICORN:
-gunicorn -c gunicorn.conf.py 'setup:app'
+gunicorn -c gunicorn.conf.py 'app:app'
 
 MIGRATIONS:
 flask db init
