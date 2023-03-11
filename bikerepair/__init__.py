@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 import configparser
@@ -45,11 +46,12 @@ fileHandler.setFormatter(logFormatter)
 logger.addHandler(fileHandler)
 
 db = SQLAlchemy()
+migrate = Migrate()
 login_manager = LoginManager()
 
 
 # creating Flask application
-def create_app(section_name):
+def create_app(section_name='DEVELOP'):
     app = Flask(__name__)
     from bikerepair.views.routes import bp
     from bikerepair.rest.api_routes import bp as bp_api
@@ -60,12 +62,12 @@ def create_app(section_name):
     app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False
 
     db.init_app(app)
+    migrate.init_app(app, db)
     # init Flask login manager
 
     login_manager.init_app(app)
     login_manager.login_view = 'bp.login'
+
     return app
 
-
 from bikerepair.views import routes
-
