@@ -11,23 +11,20 @@ from bikerepair import db, login_manager
 from bikerepair.models.models import User, Order
 
 
-# configure login_manager
-@login_manager.user_loader
+@login_manager.user_loader  # configure login_manager
 def load_user(user_id):
     """Redefining load_user method for flask login"""
     return User.query.get(user_id)
 
 
-# route for home page
-@bp.route('/', methods=['GET'])
+@bp.route('/', methods=['GET'])  # route for home page
 @bp.route('/home', methods=['GET'])
 def index():
     """Route for main page"""
     return render_template("index.html")
 
 
-# route for login page
-@bp.route('/login', methods=['GET', 'POST'])
+@bp.route('/login', methods=['GET', 'POST'])  # route for login page
 def login():
     """Route for login page"""
     my_login = request.form.get('login')
@@ -43,8 +40,7 @@ def login():
     return render_template('login.html')
 
 
-# route for logout function
-@bp.route('/logout')  # methods=['GET', 'POST'])
+@bp.route('/logout')  # route for logout function
 @login_required
 def logout():
     """Route for logout"""
@@ -53,8 +49,7 @@ def logout():
     return redirect(url_for('bp.login'))
 
 
-# route for signup page
-@bp.route('/signup', methods=['GET', 'POST'])
+@bp.route('/signup', methods=['GET', 'POST'])  # route for signup page
 def signup():
     """Route for sign up page"""
     my_login = request.form.get('login')
@@ -72,8 +67,7 @@ def signup():
     return render_template("signup.html")
 
 
-# route for user account
-@bp.route('/user_account/<string:name>', methods=['GET', 'POST'])
+@bp.route('/user_account/<string:name>', methods=['GET', 'POST']) # route for user account
 @login_required
 def user(name):
     """Route for user account page"""
@@ -94,8 +88,7 @@ def user(name):
     return redirect(url_for('bp.login'))
 
 
-# route for admin account
-@bp.route('/admin_account', methods=['GET', 'POST'])
+@bp.route('/admin_account', methods=['GET', 'POST'])  # route for admin account
 @login_required
 def admin():
     """Route for admin account page"""

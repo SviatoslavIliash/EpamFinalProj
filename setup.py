@@ -8,7 +8,7 @@ setup(
     name='bikerepair',
     version='1.0',
     author='Sviatoslav Iliash',
-    author_email='',
+    author_email='iliashsviatoslav@gmail.com',
     description='Service for repair bicycles',
     long_description='Web service for clients who want to maintain their bicycles',
     url='https://github.com/SviatoslavIliash/EpamFinalProj',

@@ -8,7 +8,8 @@ from flask_httpauth import HTTPBasicAuth
 from flask import render_template, url_for, request, flash, redirect, Blueprint, g
 from flask_login import login_required, current_user, logout_user
 
-from bikerepair.service.db_crud import create_user, check_login_user, total_user_orders, create_user_order, \
+from bikerepair.service.db_crud import create_user, check_login_user,\
+    total_user_orders, create_user_order, \
     date_filter_orders, crud_status
 
 bp = Blueprint('bp_api', __name__)
@@ -47,9 +48,9 @@ def verify_password(my_login, password):
     return False
 
 
-# api for logout function
 @bp.route('/api/signup', methods=['POST'])
 def signup():
+    """Api for logout function"""
     my_login = request.json.get('login')
     password = request.json.get('password')
     password2 = request.json.get('password2')
@@ -63,10 +64,10 @@ def signup():
     return jsonify(message=response), 400
 
 
-# api for user account
 @bp.route('/api/user_account/new_order', methods=['POST'])
 @auth.login_required
 def new_order():
+    """Api for user account"""
     serv1 = request.json.get('wash')
     serv2 = request.json.get('repair')
     serv3 = request.json.get('upgrade')
@@ -80,10 +81,10 @@ def new_order():
     return jsonify(message='New order created'), 200
 
 
-# api for user orders
 @bp.route('/api/user_account/user_orders', methods=['GET'])
 @auth.login_required
 def user_orders():
+    """Api for user orders"""
     orders = total_user_orders(current_user.login)
     if len(orders) != 0:
         api_orders = []
@@ -93,10 +94,10 @@ def user_orders():
     return jsonify(message='No orders yet'), 200
 
 
-# api for admin crud orders
 @bp.route('/api/admin_account/crud_orders', methods=['POST'])
 @auth.login_required
 def crud_orders():
+    """Api for admin crud orders"""
     if current_user.login != 'admin':
         return jsonify(message='Access restricted'), 403
 
@@ -113,10 +114,10 @@ def crud_orders():
     return jsonify(message='Could not find such order'), 404
 
 
-# api for admin, receive users with orders if True or all users
 @bp.route('/api/admin_account/user_names', methods=['GET'])
 @auth.login_required
 def admin_user_names():
+    """Api for admin, receive users with orders if True or all users"""
     if current_user.login != 'admin':
         return jsonify(message='Access restricted'), 403
     got_orders = request.args.get('got_orders')
@@ -137,10 +138,10 @@ def admin_user_names():
     return jsonify(message='No users yet'), 200
 
 
-# api for admin, receive users and their orders. User splits by ", "
 @bp.route('/api/admin_account/user_orders', methods=['GET'])
 @auth.login_required
 def admin_user_orders():
+    """Api for admin, receive users and their orders. User splits by ", " """
     if current_user.login != 'admin':
         return jsonify(message='Access restricted'), 403
 
@@ -150,7 +151,7 @@ def admin_user_orders():
     if wanted_user:
         users = wanted_user.split(", ")
         check_users = [check for check in db.session.query(User).
-            filter(User.login.in_(users)) if check is not None]
+                        filter(User.login.in_(users)) if check is not None]
 
     if len(users) != len(check_users):
         return jsonify(message='Bad request parameters!')
@@ -172,10 +173,10 @@ def admin_user_orders():
     return jsonify(message='No users yet'), 200
 
 
-# api for admin filter orders
 @bp.route('/api/admin_account/filter_orders', methods=['GET'])
 @auth.login_required
 def filter_orders():
+    """Api for admin filter orders"""
     if current_user.login != 'admin':
         return jsonify(message='Access restricted'), 403
     date_first = request.args.get('date_first')

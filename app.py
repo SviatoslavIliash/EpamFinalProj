@@ -1,6 +1,5 @@
 """Main start point for application"""
-from bikerepair import create_app, db
-import logging
+from bikerepair import create_app
 
 
 app = create_app('DEVELOP')

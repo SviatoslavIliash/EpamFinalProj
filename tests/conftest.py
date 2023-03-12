@@ -1,12 +1,15 @@
+"""Main file for pytest tests"""
 import pytest
 
-from bikerepair import create_app, db as _db
 from flask import template_rendered
+
+from bikerepair import create_app, db as _db
 from bikerepair.models.models import Service
 
 
 @pytest.fixture(scope="session", autouse=True)
 def app():
+    """Fixture for app"""
     test_app = create_app('TEST')
     test_app.config.update({
         "TESTING": True,
@@ -20,14 +23,15 @@ def app():
 
 @pytest.fixture(scope="session")
 def client(app):
+    """Fixture for app client"""
     client = app.test_client()
-    #with app.app_context():
-    #_db.create_all()
+
     yield client
 
 
 @pytest.fixture(scope="function")
 def session(db, request):
+    """Fixture for db session"""
     db.session.begin_nested()
 
     def commit():
@@ -46,11 +50,13 @@ def session(db, request):
 
 @pytest.fixture()
 def runner(app):
+    """Fixture for cli runner"""
     return app.test_cli_runner()
 
 
 @pytest.fixture
 def captured_templates(app):
+    """Fixture for templates"""
     recorded = []
 
     def record(sender, template, context, **extra):
@@ -65,12 +71,14 @@ def captured_templates(app):
 
 @pytest.fixture(scope="module")
 def new_service():
+    """Fixture for new service"""
     service = Service(name='default', price='400')
     return service
 
 
 @pytest.fixture(scope='session')
 def db(app, request):
+    """Fixture for db"""
     def teardown():
         _db.drop_all()
 
