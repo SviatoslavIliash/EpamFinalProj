@@ -14,7 +14,9 @@ setup(
     url='https://github.com/SviatoslavIliash/EpamFinalProj',
     keywords='development, setup, setuptools',
     python_requires='>=3.9',
-    packages=find_packages(include=['bikerepair', 'bikerepair.*', 'tests']),
+    include_package_data=True,
+    packages=find_packages(include=['bikerepair', 'bikerepair.*']),
+    package_data={'bikerepair': ['*.ini']},
     install_requires=[
         'alembic==1.10.2',
         'astroid==2.14.2',

@@ -33,10 +33,24 @@ def create_database():
     try:
         flask_migrate.upgrade()
         Service.default_table(db)
+        create_user('admin', '1234', '1234', 'admin@admin.com')
     except Exception:
         return jsonify(message='Database was already created'), 500
     return jsonify(message='Database successfully created'), 200
 
+
+@bp.route('/api/create_db_no_migrations')
+def create_database_no_migrations():
+    """Creating database and default service table when no migrations folder"""
+    try:
+        flask_migrate.init()
+        flask_migrate.migrate()
+        flask_migrate.upgrade()
+        Service.default_table(db)
+        create_user('admin', '1234', '1234', 'admin@admin.com')
+    except Exception:
+        return jsonify(message='Database was already created'), 500
+    return jsonify(message='Database successfully created'), 200
 
 @auth.verify_password
 def verify_password(my_login, password):

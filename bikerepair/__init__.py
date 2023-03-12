@@ -8,14 +8,11 @@ from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
-from root_dir import ROOT_DIR
 
-
-# reading config file
 def read_config(section_name):
     """Reading config file"""
     config = configparser.ConfigParser()
-    config.read(os.path.join(ROOT_DIR, 'bikerepair/config.ini'))
+    config.read(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.ini'))
     db_type = config[section_name]['DBtype']
     # db_ is name for mysql and path to file for sqlite
     db_ = ''
@@ -34,8 +31,8 @@ def read_config(section_name):
             uri = f'sqlite:////{db_}'
     return uri
 
-# create root logger
-logger = logging.getLogger()
+
+logger = logging.getLogger()  # create root logger
 logFormatter = logging.Formatter(
     "%(asctime)s - %(levelname)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 # add console handler to the root logger
@@ -66,7 +63,8 @@ def create_app(section_name='DEVELOP'):
     app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False
 
     db.init_app(app)
-    migrate.init_app(app, db)
+    migrate.init_app(app, db, directory=os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), 'migrations'))
     # init Flask login manager
 
     login_manager.init_app(app)
