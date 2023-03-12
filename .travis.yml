@@ -6,8 +6,8 @@ python:
 before_install:
   - python -m pip install --upgrade pip
 script:
-  - python -m pytest -v tests/test_routes.py
+  - python -m pytest -v tests/
   - pylint app
 after_success:
-  - COVERALLS_REPO_TOKEN=muQpEeAA1v6UD6GjvsV1UtWoxWXpI8CNg coveralls
+  - COVERALLS_REPO_TOKEN=gjAlZt9Z9T8kZAVtoPpZ6HtOqCM4DmL4t coveralls
 
