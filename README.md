@@ -4,7 +4,7 @@ ___
 ## Instalation
 1. Setup MySQL, Python3, pip, build, gunicorn, curl
 2. Create and activate virtual environment 
-3. Install from GitHub: `(venv)mydir> pip install git+https://https://github.com/SviatoslavIliash/EpamFinalProj.git`
+3. Install from GitHub: `(venv)mydir> pip install git+https://github.com/SviatoslavIliash/EpamFinalProj.git`
 4. Create Database: `> mysql -u <root or username> -p -e 'CREATE DATABASE bikerepair'`
 5. Create MySql user `CREATE USER 'brepair'@'localhost' IDENTIFIED BY 'admin';`
 6. Access MySql user `GRANT ALL PRIVILEGES ON bikerepair.* TO 'brepair'@'localhost';`
