@@ -16,7 +16,7 @@ setup(
     python_requires='>=3.9',
     include_package_data=True,
     packages=find_packages(include=['bikerepair', 'bikerepair.*']),
-    package_data={'bikerepair': ['*.ini']},
+    package_data={'bikerepair': ['*.ini', 'static/*/*', 'templates/*']},
     install_requires=[
         'alembic==1.10.2',
         'astroid==2.14.2',
